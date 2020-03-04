@@ -43,3 +43,8 @@ html, body{
 #b-landing:hover {
     font-weight: bold;
 }
+
+#b-holder {
+    width: 15rem;
+    margin: auto;
+}

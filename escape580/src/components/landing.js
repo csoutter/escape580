@@ -7,11 +7,30 @@ import epicMusic from '../audio/bensound-epic.mp3';
 
 function Greeting(props) {
 
-const[sound, setSound] = useState('');
+    const hpTheme = "https://ia801309.us.archive.org/28/items/HarryPotter-hedwigTheme/Harry_Potter_Theme_Song_Hedwigs_Theme.mp3";
+
+    const[sound, setSound] = useState( <Sound
+                                           url={hpTheme}
+                                           playStatus={Sound.status.PLAYING}
+                                           autoLoad={true}
+                                           loop={false}
+                                        />);
 
     const handleClick = () => {
         props.onClick();
     };
+
+    const stopSound = () => {
+       Sound.playStatus = Sound.status.STOPPED;
+            setSound(
+                <Sound
+                     url={hpTheme}
+                     playStatus={Sound.status.STOPPED}
+                     autoLoad={true}
+                     loop={false}
+                 />
+            );
+        }
 
     return (
        <div id="d-landing">
@@ -22,15 +41,15 @@ const[sound, setSound] = useState('');
            (Spoken) Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Tr-Wizard cup. You are about to enter the maze, where you will use your controller to navigate through
            the obstacles of the maze.
          </p>
-         <button id="b-landing" onClick={handleClick}>
-         Begin
-         </button>
-         <Sound
-              url={magicSound}
-              playStatus={Sound.status.PLAYING}
-              autoLoad={true}
-              loop={false}
-          />
+         <div id="b-holder">
+            <button id="b-landing" onClick={handleClick}>
+                     Begin
+                     </button>
+                     <button id="b-landing" onClick={stopSound}>
+                     STOP SOUND
+          </button>
+         </div>
+        {sound}
        </div>
     );
 }
