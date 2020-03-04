@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Trade+Winds|Yeon+Sung&display=swap');
+
+html, body{
+    font-family: 'Yeon Sung', Arial;
+    height: 100%;
+    background-image: url('https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+#d-landing {
+    margin: auto;
+    text-align: center;
+    width: 40rem;
+    margin-top: 10rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+}
+
+#p-landing {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+}
+
+#h-landing {
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 5rem;
+}
