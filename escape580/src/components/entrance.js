@@ -1,5 +1,7 @@
 import React, {useLayoutEffect, useEffect } from 'react';
+import Sound from 'react-sound';
 import '../entrance.css';
+import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
 
 export function Entrance(props) {
 
@@ -27,7 +29,12 @@ export function Entrance(props) {
                          Exit Maze
                         </button>
             </div>
-
+             <Sound
+                          url={magicSound}
+                          playStatus={Sound.status.PLAYING}
+                          autoLoad={true}
+                          loop={false}
+                      />
           </div>
    );
 }
