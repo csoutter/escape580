@@ -30,3 +30,16 @@ html, body{
   text-align: center;
   font-size: 5rem;
 }
+
+#b-landing{
+   font-family: 'Yeon Sung', Arial;
+   cursor: pointer;
+   background: none;
+   border: none;
+   font-size: 2rem;
+   padding-bottom: 1rem;
+}
+
+#b-landing:hover {
+    font-weight: bold;
+}
