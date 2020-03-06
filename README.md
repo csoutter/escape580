@@ -17,7 +17,7 @@ The dependencies for this should automatically be added when you have pulled the
  
  import Sound from 'react-sound';
  
- The basic structure of a sound component is shown below, and should be incoroproated into the html of the component you are rendering on the page you want the music to play on. Different attributes to the sound component control how long it plays, 
+ The basic structure of a sound component is shown below, and should be incoroproated into the html of the component you are rendering on the page you want the audio to play on. Different attributes to the sound component control how long it plays, 
  from what point within the music file it starts playing, etc.
  
  <Sound 
