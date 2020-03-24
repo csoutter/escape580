@@ -3,7 +3,7 @@
 html, body{
     font-family: 'Yeon Sung', Arial;
     height: 100%;
-    background-image: url('https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg');
+    background-image: url('./images/castle_and_maze.png');
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
@@ -16,7 +16,7 @@ html, body{
     margin-top: 10rem;
     background-color: white;
     border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
     display: inline-block;
 }
 
@@ -29,4 +29,22 @@ html, body{
   margin-top: 10rem;
   text-align: center;
   font-size: 5rem;
+}
+
+#b-landing{
+   font-family: 'Yeon Sung', Arial;
+   cursor: pointer;
+   background: none;
+   border: none;
+   font-size: 2rem;
+   padding-bottom: 1rem;
+}
+
+#b-landing:hover {
+    font-weight: bold;
+}
+
+#b-holder {
+    width: 15rem;
+    margin: auto;
 }

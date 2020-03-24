@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Trade+Winds|Yeon+Sung&display=swap');
+
+#h-entrance{
+    font-family: 'Yeon Sung', Arial;
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#d-button-holder {
+ width: 10rem;
+ margin: auto;
+
+}
