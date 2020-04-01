@@ -10,14 +10,13 @@ export function AppView(props){
 
     const handleViewChange = (view) => {
         setView(view);
-    }
+    };
 
     const handleExitClick = () => {
             setView('landing');
         }
 
     useLayoutEffect(() => {
-       console.log('changing view');
           switch(view) {
             case 'enter':
             setDisplay(
@@ -40,6 +39,7 @@ export function AppView(props){
             <DevilsSnare
             background="url('../images/devilsSnare.jpg')"
             exit={handleExitClick}
+            handleViewChange={handleViewChange}
             />
             );
             break;

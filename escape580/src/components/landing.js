@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useCallback } from 'react';
 import Sound from 'react-sound';
 import {AppView} from './appView';
 import '../landing.css';
@@ -8,6 +8,8 @@ import epicMusic from '../audio/bensound-epic.mp3';
 function Greeting(props) {
 
     const hpTheme = "https://ia801309.us.archive.org/28/items/HarryPotter-hedwigTheme/Harry_Potter_Theme_Song_Hedwigs_Theme.mp3";
+
+   const handleViewChange = props.onClick === undefined ? null : props.onClick;
 
     const[sound, setSound] = useState( <Sound
                                            url={hpTheme}
@@ -19,6 +21,22 @@ function Greeting(props) {
     const handleClick = () => {
         props.onClick();
     };
+
+      const handleKey = useCallback((e) => {
+             var event = window.event ? window.event : e;
+                console.log(event);
+             if(e.key === "ArrowRight") {
+                     console.log("right arrow key pressed");
+                      handleViewChange("enter");
+                     }
+        }, [props]);
+
+       useLayoutEffect(() => {
+           document.addEventListener("keydown", handleKey);
+                 return function cleanup() {
+                 document.removeEventListener("keydown", handleKey);
+               };
+         });
 
     const stopSound = () => {
        Sound.playStatus = Sound.status.STOPPED;

@@ -1,24 +1,35 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useLayoutEffect, useEffect, useCallback} from 'react';
 
 export function DevilsSnare(props) {
-
-//    useLayoutEffect(() => {
-//        document.body.style.background = props.background;
-//    });
 
     const handleExitClick = () => {
         props.exit();
     }
 
-    const handleKey = (e) => {
-        if(e.key === "ArrowRight") {
-        console.log("right arrow key pressed");
-            //call props.handleViewChange here
-        }
-        };
+    const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
+
+      const handleKey = useCallback((e) => {
+           var event = window.event ? window.event : e;
+              console.log(event);
+           switch(e.key) {
+           case "ArrowRight":
+           console.log("right arrow key pressed");
+           break;
+           case "ArrowLeft":
+           handleViewChange('enter');
+           }
+      }, [props]);
+
+     useLayoutEffect(() => {
+         document.addEventListener("keydown", handleKey);
+               return function cleanup() {
+               document.removeEventListener("keydown", handleKey);
+             };
+       });
+
 
     return (
-      <div id="d-landing" onKeyDown={handleKey}>
+      <div id="d-landing">
                   <h id="h-entrance" >
                         Welcome to Level One
                   </h>
