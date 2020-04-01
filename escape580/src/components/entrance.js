@@ -5,13 +5,17 @@ import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_gli
 
 export function Entrance(props) {
 
-    useLayoutEffect(() => {
-        document.body.style.background = props.background;
-    });
+//    useLayoutEffect(() => {
+//    document.body.style.backgroundImage = props.background;
+//    });
 
-    const handleClick = () => {
-        props.handleViewChange('landing');
-    }
+    const handleExitClick = () => {
+        props.exit();
+    };
+
+    const handleNextClick = () => {
+        props.handleViewChange('level-one');
+    };
 
    return (
    <div id="d-landing">
@@ -22,10 +26,10 @@ export function Entrance(props) {
               (Spoken) You have just entered the maze.
             </p>
             <div id="d-button-holder">
-            <button id="b-landing">
+            <button id="b-landing" onClick={handleNextClick} >
                         Next
                         </button>
-                        <button id="b-landing" onClick={handleClick}>
+                        <button id="b-landing" onClick={handleExitClick}>
                          Exit Maze
                         </button>
             </div>
