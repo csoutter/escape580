@@ -1,6 +1,6 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
 
-export function DevilsSnare(props) {
+export function Sphinx(props) {
 
     const handleExitClick = () => {
         props.exit();
@@ -13,7 +13,7 @@ export function DevilsSnare(props) {
               console.log(event);
            switch(e.key) {
            case "ArrowRight":
-              handleViewChange('level-four');
+              handleViewChange('level-five');
            console.log("right arrow key pressed");
            break;
            case "ArrowLeft":
@@ -32,15 +32,10 @@ export function DevilsSnare(props) {
     return (
       <div id="d-landing">
                   <h id="h-entrance" >
-                        Welcome to Level One
+                        Welcome to Level Four
                   </h>
                   <p id="p-landing">
-                    Oh no! You have slipped and fallen into a Devil’s Snare pit trap.
-                    Devil’s snare plant consists of thick, snake-like vines that twist
-                    around it’s victims unless they remember to relax and stop moving.
-                    The Devil’s Snare plant likes a dark, damp environment. You have
-                    already moved too much and the Devil’s snare plant has a strong grip
-                    around you, you must use a spell to escape!
+                    ANSWER THE RIDDLE
                   </p>
                   <div id="d-button-holder">
                   <button id="b-landing">

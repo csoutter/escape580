@@ -2,6 +2,9 @@ import React, { useState, useLayoutEffect } from 'react';
 import {Entrance} from './entrance';
 import {Landing} from './landing';
 import {DevilsSnare} from './devilsSnare';
+import { Sphinx } from './sphinx';
+import {Prophecy } from "./prophecy";
+
 
 export function AppView(props){
 
@@ -38,6 +41,24 @@ export function AppView(props){
            setDisplay(
             <DevilsSnare
             background="url('../images/devilsSnare.jpg')"
+            exit={handleExitClick}
+            handleViewChange={handleViewChange}
+            />
+            );
+            break;
+            case 'level-four':
+           setDisplay(
+            <Sphinx
+            background="url('../images/Sphinx.png')"
+            exit={handleExitClick}
+            handleViewChange={handleViewChange}
+            />
+            );
+            break;
+            case 'level-five':
+           setDisplay(
+            <Prophecy
+            background="url('../images/prophecy.png')"
             exit={handleExitClick}
             handleViewChange={handleViewChange}
             />
