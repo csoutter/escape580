@@ -4,6 +4,7 @@ import {AppView} from './appView';
 import '../landing.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
 import epicMusic from '../audio/bensound-epic.mp3';
+import Speech from 'react-speech';
 
 function Greeting(props) {
 
@@ -16,6 +17,16 @@ function Greeting(props) {
                                            playStatus={Sound.status.PLAYING}
                                            autoLoad={true}
                                            loop={false}
+                                        />);
+    const[speech, setSpeech] = useState( <Speech 
+                                            text ="Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup. 
+                                            You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. 
+                                            Click the spacebar to begin!"
+                                            pitch="1"
+                                            rate="1"
+                                            volume="1"
+                                            lang="en-GB"
+                                            voice="Google UK English Male"
                                         />);
 
     const handleClick = () => {
@@ -48,6 +59,11 @@ function Greeting(props) {
                      loop={false}
                  />
             );
+            setSpeech(
+                <Speech
+                    //not sure what to put here
+                />
+            );
         }
 
     return (
@@ -56,8 +72,7 @@ function Greeting(props) {
                Escape 580
          </h>
          <p id="p-landing">
-           (Spoken) Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Tr-Wizard cup. You are about to enter the maze, where you will use your controller to navigate through
-           the obstacles of the maze.
+           (Spoken) Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup. You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. Click the spacebar to begin!
          </p>
          <div id="b-holder">
             <button id="b-landing" onClick={handleClick}>
@@ -68,6 +83,7 @@ function Greeting(props) {
           </button>
          </div>
         {sound}
+        {speech}
        </div>
     );
 }

@@ -1,6 +1,6 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
 
-export function Prophecy(props) {
+export function Ending(props) {
 
     const handleExitClick = () => {
         props.exit();
@@ -13,7 +13,7 @@ export function Prophecy(props) {
               console.log(event);
            switch(e.key) {
            case "ArrowRight":
-               handleViewChange('ending');
+              handleViewChange('ending');
            console.log("right arrow key pressed");
            break;
            case "ArrowLeft":
@@ -32,18 +32,17 @@ export function Prophecy(props) {
     return (
       <div id="d-landing">
                   <h id="h-entrance" >
-                        Welcome to Level Five
+                        You exited the maze!!
                   </h>
                   <p id="p-landing">
-                    WHO IS THE PROPHECY ABOUT??????
+                  Congratulations, wizard, you made it out alive! The Triwizard cup is yours! 
+                  You may have passed this test but you will have many more to face, young wizard. 
+                  Onward and upward!
                   </p>
                   <div id="d-button-holder">
-                  <button id="b-landing">
-                              Next
-                              </button>
-                              <button id="b-landing" onClick={handleExitClick}>
-                               Exit Maze
-                              </button>
+                      <button id="b-landing" onClick={handleExitClick}>
+                           Start Over
+                        </button>
                   </div>
                 </div>
     );

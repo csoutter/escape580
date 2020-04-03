@@ -4,6 +4,7 @@ import {Landing} from './landing';
 import {DevilsSnare} from './devilsSnare';
 import { Sphinx } from './sphinx';
 import {Prophecy } from "./prophecy";
+import {Ending} from "./ending";
 
 
 export function AppView(props){
@@ -58,6 +59,15 @@ export function AppView(props){
             case 'level-five':
            setDisplay(
             <Prophecy
+            background="url('../images/prophecy.png')"
+            exit={handleExitClick}
+            handleViewChange={handleViewChange}
+            />
+            );
+            break;
+            case 'ending':
+           setDisplay(
+            <Ending
             background="url('../images/prophecy.png')"
             exit={handleExitClick}
             handleViewChange={handleViewChange}
