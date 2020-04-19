@@ -1,4 +1,6 @@
 import React, {useLayoutEffect, useCallback, useState} from 'react';
+import Sound from 'react-sound';
+import instructions from "../audio/instructions.m4a";
 
 export function Instructions(props) {
 
@@ -37,7 +39,7 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
                             how to proceed. <br/>
                             </p>
                             <p>
-                            These options can be accessed tabbing on the keyboard. The tab button will be the second button below the top
+                            These options can be accessed by tabbing on the keyboard. The tab button will be the second button below the top
                             left button, or the escape key. After identifying the top left button, move down 2 keys with your finger and you should be
                             at the tab key.<br/>
                             </p>
@@ -49,6 +51,13 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
                             <p>If you are ready to begin, press the spacebar.</p>
                           </p>
                         </div>
+                        <Sound
+                           url={instructions}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={false}
+                           volume={100}
+                        />
         </div>
         );
 }
