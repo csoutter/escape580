@@ -4,7 +4,7 @@ import {AppView} from './appView';
 import '../landing.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
 import epicMusic from '../audio/bensound-epic.mp3';
-import Speech from 'react-speech';
+import landingInstructions from "../audio/landing.m4a";
 
 function Greeting(props) {
 
@@ -17,18 +17,6 @@ function Greeting(props) {
                                            playStatus={Sound.status.PLAYING}
                                            autoLoad={true}
                                            loop={false}
-                                        />);
-
-    const[speech, setSpeech] = useState( <Speech 
-                                            text ="Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup. 
-                                            You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. 
-                                            Click the spacebar to begin!"
-                                            pitch="1"
-                                            rate="1"
-                                            volume="1"
-                                            lang="en-GB"
-                                            voice="Google UK English Male"
-                                            pause="true"
                                         />);
 
     const handleClick = () => {
@@ -84,6 +72,13 @@ function Greeting(props) {
             </div>
             {sound}
         </div>
+        <Sound
+                     url={landingInstructions}
+                     playStatus={Sound.status.PLAYING}
+                     autoLoad={true}
+                     loop={false}
+                     volume="100"
+                 />
     </div>
     );
 }

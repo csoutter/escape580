@@ -1,6 +1,7 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
 import Sound from 'react-sound';
 import exitInstructions from '../audio/exit.m4a';
+import clapping from "../audio/cheering.mp3";
 
 export function Ending(props) {
 
@@ -54,6 +55,13 @@ export function Ending(props) {
                            autoLoad={true}
                            loop={false}
                            volume="100"
+                       />
+                <Sound
+                           url={clapping}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={false}
+                           volume="5"
                        />
       </div>
     );
