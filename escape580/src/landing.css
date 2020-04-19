@@ -3,10 +3,22 @@
 html, body{
     font-family: 'Yeon Sung', Arial;
     height: 100%;
+    text-align: center;
+}
+#landing-image{
     background-image: url('./images/castle_and_maze.png');
+    height: 100vh;
+    width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
-    text-align: center;
+}
+
+#entrance-image {
+    background-image: url('./images/maze_overlook.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #d-landing {

@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useCallback } from 'react';
+import React, { useState, useLayoutEffect, useCallback, useEffect } from 'react';
 import Sound from 'react-sound';
 import {AppView} from './appView';
 import '../landing.css';
@@ -10,7 +10,7 @@ function Greeting(props) {
 
     const hpTheme = "https://ia801309.us.archive.org/28/items/HarryPotter-hedwigTheme/Harry_Potter_Theme_Song_Hedwigs_Theme.mp3";
 
-   const handleViewChange = props.onClick === undefined ? null : props.onClick;
+    const handleViewChange = props.onClick === undefined ? null : props.onClick;
 
     const[sound, setSound] = useState( <Sound
                                            url={hpTheme}
@@ -18,6 +18,7 @@ function Greeting(props) {
                                            autoLoad={true}
                                            loop={false}
                                         />);
+
     const[speech, setSpeech] = useState( <Speech 
                                             text ="Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup. 
                                             You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. 
@@ -27,6 +28,7 @@ function Greeting(props) {
                                             volume="1"
                                             lang="en-GB"
                                             voice="Google UK English Male"
+                                            pause="true"
                                         />);
 
     const handleClick = () => {
@@ -59,32 +61,30 @@ function Greeting(props) {
                      loop={false}
                  />
             );
-            setSpeech(
-                <Speech
-                    //not sure what to put here
-                />
-            );
         }
 
     return (
-       <div id="d-landing">
-         <h id="h-landing" >
-               Escape 580
-         </h>
-         <p id="p-landing">
-           (Spoken) Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup. You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. Click the spacebar to begin!
-         </p>
-         <div id="b-holder">
-            <button id="b-landing" onClick={handleClick}>
-                     Begin
-                     </button>
-                     <button id="b-landing" onClick={stopSound}>
-                     STOP SOUND
-          </button>
-         </div>
-        {sound}
-        {speech}
-       </div>
+       <div id="landing-image">
+           <div id="d-landing">
+            <h id="h-landing" >
+                Escape 580
+            </h>
+            <p id="p-landing">
+            (Spoken) Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup. 
+            You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. 
+            Click the right arrow to begin!
+            </p>
+            <div id="b-holder">
+                <button id="b-landing" onClick={handleClick}>
+                        Begin
+                        </button>
+                        <button id="b-landing" onClick={stopSound}>
+                        STOP SOUND
+            </button>
+            </div>
+            {sound}
+        </div>
+    </div>
     );
 }
 
