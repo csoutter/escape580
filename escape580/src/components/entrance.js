@@ -21,7 +21,7 @@ export function Entrance(props) {
                     handleViewChange("level-one");
                     break;
                     case "ArrowLeft":
-                    handleViewChange('landing');
+                    handleViewChange('instructions');
                     }
     }, [props]);
 
@@ -63,7 +63,7 @@ export function Entrance(props) {
                            url={magicSound}
                            playStatus={Sound.status.PLAYING}
                            autoLoad={true}
-                           loop={true}
+                           loop={false}
                            volume="5"
                        />
                        <Sound

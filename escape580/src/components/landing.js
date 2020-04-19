@@ -58,7 +58,7 @@ function Greeting(props) {
                 Escape 580
             </h>
             <p id="p-landing">
-            (Spoken) Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup. 
+            Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup.
             You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. 
             Click the right arrow to begin!
             </p>
