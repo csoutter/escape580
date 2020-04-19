@@ -1,5 +1,6 @@
 import React, {useLayoutEffect, useEffect, useCallback, useState} from 'react';
 import Sound from 'react-sound';
+import '../levels.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
 import devils_snare from '../audio/devils_snare.m4a';
 import rain_spell from '../audio/devilsSnare/rain_spell.m4a';
@@ -159,36 +160,38 @@ export function DevilsSnare(props) {
 
 
     return (
-      <div id="d-landing">
-                  <h id="h-entrance" >
-                        Welcome to Level One
-                  </h>
-                  <p id="p-landing">
-                    Oh no! You have slipped and fallen into a Devil’s Snare pit trap.
-                    Devil’s snare plant consists of thick, snake-like vines that twist
-                    around it’s victims unless they remember to relax and stop moving.
-                    The Devil’s Snare plant likes a dark, damp environment. You have
-                    already moved too much and the Devil’s snare plant has a strong grip
-                    around you, you must use a spell to escape!
-                  </p>
-                  <p>
-                    Your options are
-                    <ol type="A">
-                    <li> Rain Spell </li>
-                    <li> Explosion Spell</li>
-                    <li> Sunlight Spell</li>
-                    <li> Scream Spell</li>
-                    </ol>
-                  </p>
-                  <div id="d-button-holder">
-                  <button id="b-landing">
-                              Next
-                              </button>
-                              <button id="b-landing" onClick={handleExitClick}>
-                               Exit Maze
-                              </button>
-                  </div>
-                   {sound}
-                </div>
+    <div id="devils_snare-image">
+       <div id="d-landing">
+                      <h id="h-entrance" >
+                            Welcome to Level One
+                      </h>
+                      <p id="p-landing">
+                        Oh no! You have slipped and fallen into a Devil’s Snare pit trap.
+                        Devil’s snare plant consists of thick, snake-like vines that twist
+                        around it’s victims unless they remember to relax and stop moving.
+                        The Devil’s Snare plant likes a dark, damp environment. You have
+                        already moved too much and the Devil’s snare plant has a strong grip
+                        around you, you must use a spell to escape!
+                      </p>
+                      <p>
+                        Your options are:
+                        <ul id="devils-ul">
+                        <li>A. Rain Spell </li>
+                        <li>S. Explosion Spell</li>
+                        <li>D. Sunlight Spell</li>
+                        <li>F. Scream Spell</li>
+                        </ul>
+                      </p>
+                      <div id="d-button-holder">
+                      <button id="b-landing">
+                                  Next
+                                  </button>
+                                  <button id="b-landing" onClick={handleExitClick}>
+                                   Exit Maze
+                                  </button>
+                      </div>
+                       {sound}
+                    </div>
+    </div>
     );
 }

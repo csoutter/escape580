@@ -37,6 +37,14 @@ html, body{
     background-repeat: no-repeat;
 }
 
+#devils_snare-image{
+    background-image: url('./images/devils_snare.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #d-landing {
     margin: auto;
     text-align: center;
