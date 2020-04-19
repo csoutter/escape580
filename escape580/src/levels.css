@@ -1,12 +1,19 @@
-#devils-ul{
-  list-style: none;
-  text-align: left;
-}
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Trade+Winds|Yeon+Sung&display=swap');
 
+/*DEVIL'S SNARE COMP*/
 #d-options{
     display: inline-block;
 }
 
+#rain, #explosion, #sunlight, #scream {
+    background: none;
+    font-family: 'Yeon Sung', Arial;
+    font-size: 1.125rem;
+    border: none;
+    margin-right: 0.5rem;
+}
+
+/*INSTRUCTIONS COMP*/
 #p-instructions{
     font-size: 1em;
     text-align: left;
