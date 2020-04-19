@@ -3,6 +3,7 @@ import Sound from 'react-sound';
 import '../entrance.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
 import entranceInstructions from '../audio/opening.m4a';
+import maze_entrance from '../audio/maze_entrance.m4a'
 
 export function Entrance(props) {
 
@@ -13,12 +14,8 @@ export function Entrance(props) {
    const handleKey = useCallback((e) => {
          var event = window.event ? window.event : e;
             console.log(event);
-         if(e.key === "ArrowRight") {
-                 console.log("right arrow key pressed");
-                  handleViewChange("level-one");
-                 }
           switch(e.key) {
-                    case "ArrowRight":
+                    case " ":
                     console.log("right arrow key pressed");
                     handleViewChange("level-one");
                     break;
@@ -51,16 +48,8 @@ export function Entrance(props) {
             <p id="p-landing">
               So you think you are ready to tackle the maze...do you, wizard? Well, earlier this evening Professor Moody placed the Triwizard cup in the maze. Only he knows where to find it. Your task will be to enter the maze and face the dangers that lie there. 
               In order to win, you want to be the first to find the cup. But first, you must make it out...ALIVE! 
-              To begin your quest, click the right arrow button.
+              To begin your quest, press the space bar.
             </p>
-            <div id="d-button-holder">
-            <button id="b-landing" onClick={handleNextClick} >
-                        Next
-                        </button>
-                        <button id="b-landing" onClick={handleExitClick}>
-                         Exit Maze
-                        </button>
-            </div>
                        <Sound
                            url={maze_march}
                            playStatus={Sound.status.PLAYING}
@@ -69,11 +58,11 @@ export function Entrance(props) {
                            volume={25}
                        />
                        <Sound
-                           url={entranceInstructions}
+                           url={maze_entrance}
                            playStatus={Sound.status.PLAYING}
                            autoLoad={true}
                            loop={false}
-                           volume="100"
+                           volume={50}
                        />
           </div>
         </div>

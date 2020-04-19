@@ -46,7 +46,7 @@ export function Chamber(props) {
                     playStatus={Sound.status.PLAYING}
                     autoLoad={true}
                     loop={true}
-                    volume={40}
+                    volume={75}
                    />
                    </React.Fragment>;
 

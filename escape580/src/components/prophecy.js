@@ -1,7 +1,7 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
 import prophecyinstructions from '../audio/level4.mp3';
-import thunder from "../audio/thunder.wav";
-import foreboding from "../audio/foreboding.wav"
+import thunder from "../audio/prophecy/thunder.wav";
+import foreboding from "../audio/prophecy/foreboding.wav"
 // "Something Evil Approaches, A.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
 import Sound from 'react-sound';
 
