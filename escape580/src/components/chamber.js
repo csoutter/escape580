@@ -11,6 +11,7 @@ import powers_reply from '../audio/chamber/powers_reply.m4a';
 import sword_reply from '../audio/chamber/sword_reply.m4a';
 import gryffindor_reply from '../audio/chamber/gryffindor_reply.m4a';
 import snake_hiss from '../audio/chamber/snakehiss2.mp3';
+import sword_draw from '../audio/chamber/swordraw.mp3';
 
 function RenderReply(props) {
     return (
@@ -29,14 +30,29 @@ function RenderReply(props) {
 export function Chamber(props) {
 
     const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
+    const chamberTheme = "https://ia800103.us.archive.org/33/items/cd_harry-potter-and-the-chamber-of-secrets-or_john-williams/disc1/03.%20John%20Williams%20-%20The%20Chamber%20Of%20Secrets_sample.mp3";
 
-    const intro = <Sound
-                        url={chamber_intro}
-                        playStatus={Sound.status.PLAYING}
-                        autoLoad={true}
-                        loop={false}
-                        volume={100}
-                                />;
+
+     const intro = <React.Fragment>
+                    <Sound
+                    url={chamber_intro}
+                     playStatus={Sound.status.PLAYING}
+                    autoLoad={true}
+                    loop={false}
+                    volume={75}
+                    />
+                   <Sound
+                    url={chamberTheme}
+                    playStatus={Sound.status.PLAYING}
+                    autoLoad={true}
+                    loop={true}
+                    volume={40}
+                   />
+                   </React.Fragment>;
+
+
+
+
 
     const[sound, setSound] = useState(intro);
 
@@ -83,15 +99,23 @@ export function Chamber(props) {
         }
 
     const handleSword = () => {
-       setSound(<Sound
-                  url={sword_reply}
-                  playStatus={Sound.status.PLAYING}
-                  autoLoad={true}
-                  loop={false}
-                  volume={100}
-                  onFinishedPlaying={finishedLevel}
-                />);
-    }
+       setSound(<React.Fragment>
+                  <Sound
+                     url={sword_draw}
+                     playStatus={Sound.status.PLAYING}
+                     autoLoad={true}
+                     loop={false}
+                     volume={75} />
+                <Sound
+                     url={sword_reply}
+                     playStatus={Sound.status.PLAYING}
+                     autoLoad={true}
+                     loop={false}
+                     volume={100}
+                     onFinishedPlaying={finishedLevel}
+                                />
+                </React.Fragment>
+                ); }
 
     const handleHat= () => {
        setSound(<RenderReply reply={powers_reply}/>);

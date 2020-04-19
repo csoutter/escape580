@@ -77,7 +77,7 @@ function Greeting(props) {
                      playStatus={Sound.status.PLAYING}
                      autoLoad={true}
                      loop={false}
-                     volume="100"
+                     volume="90"
                  />
     </div>
     );

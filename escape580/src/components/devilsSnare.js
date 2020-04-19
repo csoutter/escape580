@@ -2,7 +2,7 @@ import React, {useLayoutEffect, useEffect, useCallback, useState} from 'react';
 import Sound from 'react-sound';
 import '../levels.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
-import devils_snare from '../audio/devils_snare.m4a';
+import devils_snare from '../audio/devils_snare2.m4a';
 import rain_spell from '../audio/devilsSnare/rain_spell.m4a';
 import rain_sound from '../audio/devilsSnare/rain_soud.mov';
 import explosion from '../audio/devilsSnare/explosion.mov';
@@ -34,13 +34,27 @@ export function DevilsSnare(props) {
 
     const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
-    const intro = <Sound
-                    url={devils_snare}
-                    playStatus={Sound.status.PLAYING}
-                    autoLoad={true}
-                    loop={false}
-                    volume={100}
-                            />;
+    const snare_music = "https://ia601000.us.archive.org/9/items/cd_harry-potter-and-the-sorcerers-stone-origi_john-williams/disc1/15.%20John%20Williams%20-%20In%20the%20Devil%27s%20Snare%20-%20The%20Flying%20Keys_sample.mp3";
+
+    const intro = <React.Fragment>
+      <Sound
+         url={devils_snare}
+         playStatus={Sound.status.PLAYING}
+         autoLoad={true}
+         loop={false}
+         volume={75}
+      />
+        <Sound
+          url={snare_music}
+          playStatus={Sound.status.PLAYING}
+          autoLoad={true}
+          loop={true}
+         volume={75}
+         />
+                  </React.Fragment>;
+
+
+
 
     const[sound, setSound] = useState(intro);
     const[correct, setCorrect] = useState(false);

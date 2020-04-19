@@ -2,13 +2,15 @@ import React, {useLayoutEffect, useEffect, useState, useCallback} from 'react';
 import Sound from 'react-sound';
 import '../entrance.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
-import entranceInstructions from '../audio/opening2.m4a';
+import entranceInstructions from '../audio/opening.m4a';
 
 export function Entrance(props) {
 
    const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
-    const handleKey = useCallback((e) => {
+   const maze_march = "https://ia600104.us.archive.org/23/items/cd_harry-potter-and-the-goblet-of-fire_patrick-doyle-jarvis-cocker-jason-buckle/disc1/16.%20Patrick%20Doyle%20-%20Hogwarts%27%20March_sample.mp3";
+
+   const handleKey = useCallback((e) => {
          var event = window.event ? window.event : e;
             console.log(event);
          if(e.key === "ArrowRight") {
@@ -47,7 +49,7 @@ export function Entrance(props) {
                   Welcome to the Maze
             </h>
             <p id="p-landing">
-              (Spoken) So you think you are ready to tackle the maze...do you, wizard? Well, earlier this evening Professor Moody placed the Triwizard cup in the maze. Only he knows where to find it. Your task will be to enter the maze and face the dangers that lie there. 
+              So you think you are ready to tackle the maze...do you, wizard? Well, earlier this evening Professor Moody placed the Triwizard cup in the maze. Only he knows where to find it. Your task will be to enter the maze and face the dangers that lie there. 
               In order to win, you want to be the first to find the cup. But first, you must make it out...ALIVE! 
               To begin your quest, click the right arrow button.
             </p>
@@ -60,11 +62,11 @@ export function Entrance(props) {
                         </button>
             </div>
                        <Sound
-                           url={magicSound}
+                           url={maze_march}
                            playStatus={Sound.status.PLAYING}
                            autoLoad={true}
-                           loop={false}
-                           volume="5"
+                           loop={true}
+                           volume={25}
                        />
                        <Sound
                            url={entranceInstructions}
