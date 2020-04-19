@@ -123,7 +123,7 @@ export function DevilsSnare(props) {
     }
 
     const finishedLevel = () => {
-        handleViewChange('level-four');
+        handleViewChange('level-two');
     }
 
     const handleSunlight = () => {

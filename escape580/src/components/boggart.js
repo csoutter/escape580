@@ -127,7 +127,7 @@ export function Boggart(props) {
     }
 
     const finishedLevel = () => {
-        handleViewChange('level-two');
+        handleViewChange('level-four');
     }
 
     const handleFunny = () => {
