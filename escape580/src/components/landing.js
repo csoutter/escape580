@@ -5,6 +5,7 @@ import '../landing.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
 import epicMusic from '../audio/bensound-epic.mp3';
 import landingInstructions from "../audio/landing.m4a";
+import game_entrance from '../audio/game_entrance.m4a';
 
 function Greeting(props) {
 
@@ -26,7 +27,7 @@ function Greeting(props) {
       const handleKey = useCallback((e) => {
              var event = window.event ? window.event : e;
                 console.log(event);
-             if(e.key === "ArrowRight") {
+             if(e.key === " ") {
                      console.log("right arrow key pressed");
                       handleViewChange("enter");
                      }
@@ -60,20 +61,12 @@ function Greeting(props) {
             <p id="p-landing">
             Welcome to our game! As a player, you are a student at Hogwarts who is competing in the Triwizard cup.
             You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. 
-            Click the right arrow to begin!
+            Press the space bar to begin.
             </p>
-            <div id="b-holder">
-                <button id="b-landing" onClick={handleClick}>
-                        Begin
-                        </button>
-                        <button id="b-landing" onClick={stopSound}>
-                        STOP SOUND
-            </button>
-            </div>
             {sound}
         </div>
         <Sound
-                     url={landingInstructions}
+                     url={game_entrance}
                      playStatus={Sound.status.PLAYING}
                      autoLoad={true}
                      loop={false}
