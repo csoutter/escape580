@@ -29,6 +29,14 @@ html, body{
     background-repeat: no-repeat;
 }
 
+#boggart-image{
+    background-image: url('./images/boggart.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #d-landing {
     margin: auto;
     text-align: center;

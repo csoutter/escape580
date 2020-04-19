@@ -5,6 +5,7 @@ import {DevilsSnare} from './devilsSnare';
 import { Sphinx } from './sphinx';
 import {Prophecy } from "./prophecy";
 import {Ending} from "./ending";
+import { Boggart } from './boggart';
 
 
 export function AppView(props){
@@ -47,6 +48,15 @@ export function AppView(props){
             />
             );
             break;
+            case 'level-three':
+                setDisplay(
+                    <Boggart
+                    background="url('../images/boggart.jpg')"
+                    exit={handleExitClick}
+                    handleViewChange={handleViewChange}
+                    />
+                );
+                break;
             case 'level-four':
            setDisplay(
             <Sphinx
