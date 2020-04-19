@@ -3,6 +3,7 @@ import {Entrance} from './entrance';
 import {Landing} from './landing';
 import {DevilsSnare} from './devilsSnare';
 import { Sphinx } from './sphinx';
+import { Riddle } from './riddle';
 import {Prophecy } from "./prophecy";
 import {Ending} from "./ending";
 
@@ -55,6 +56,15 @@ export function AppView(props){
             handleViewChange={handleViewChange}
             />
             );
+            break;
+            case 'riddle':
+            setDisplay(
+            <Riddle
+            background="url('../images/Sphinx.png')"
+            exit={handleExitClick}
+            handleViewChange={handleViewChange}
+            />
+            );  
             break;
             case 'level-five':
            setDisplay(

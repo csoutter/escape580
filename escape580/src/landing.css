@@ -5,6 +5,12 @@ html, body{
     height: 100%;
     text-align: center;
 }
+
+p {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+}
+
 #landing-image{
     background-image: url('./images/castle_and_maze.png');
     height: 100vh;

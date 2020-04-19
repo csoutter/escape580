@@ -1,6 +1,6 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
 
-export function Sphinx(props) {
+export function Riddle(props) {
     
 
     const handleExitClick = () => {
@@ -15,8 +15,8 @@ export function Sphinx(props) {
               console.log(event);
            switch(e.key) {
            case "ArrowRight":
-              handleViewChange('riddle');
-           console.log("riddle");
+              handleViewChange('level-five');
+           console.log("right arrow key pressed");
            break;
            case "ArrowLeft":
            handleViewChange('enter');
@@ -34,16 +34,19 @@ export function Sphinx(props) {
     return (
       <div id="d-landing">
                   <h id="h-entrance" >
-                        Welcome to Level Four
+                        Answer the Sphinx's Riddle
                   </h>
                   <p id="p-landing">
-                    Sphinx: “You are very near your goal. The quickest way is past me, a powerful sphinx.”
+                  First think of the person who lives in disguise,<br></br>
+                  Who deals in secrets and tells naught but lies. <br></br>
+                  Next, tell me what’s always the last thing to mend, <br></br>
+                  The middle of middle and end of the end? <br></br>
+                  And finally give me the sound often heard <br></br>
+                  During the search for a hard-to-find word. <br></br>
+                  Now string them together, and answer me this, <br></br>
+                  Which creature would you be unwilling to kiss? <br></br>
                   </p>
-                  <p>“So . . . so will you move, please?” </p>
-                  <p>“No, not unless you can answer my riddle. Answer on your first guess — I let you pass. 
-                    Answer wrongly — I attack. Remain silent — I will let you walk away from me unscathed. 
-                    Press the right arrow to hear the riddle”
-                  </p>
+                  
                   <div id="d-button-holder">
                   <button id="b-landing">
                               Next
