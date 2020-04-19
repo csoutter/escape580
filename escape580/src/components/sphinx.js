@@ -58,13 +58,13 @@ export function Sphinx(props) {
                          Exit Maze
                         </button>
             </div>
-                        <Sound
+                        {/* <Sound
                            url={level4announce}
                            playStatus={Sound.status.PLAYING}
                            autoLoad={true}
                            loop={false}
                            volume="100"
-                       />
+                       /> */}
                        <Sound
                            url={snake}
                            playStatus={Sound.status.PLAYING}
@@ -86,7 +86,7 @@ export function Sphinx(props) {
                            loop={false}
                            volume="100"
                            pitch="high"
-                           playbackRate=".5"
+                           playbackRate=".8"
                        />
           </div>
         </div>
