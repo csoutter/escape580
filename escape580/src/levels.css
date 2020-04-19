@@ -13,6 +13,15 @@
     margin-right: 0.5rem;
 }
 
+/*CHAMBER COMP*/
+#hat, #sword, #basilisk, #gryffindor {
+    background: none;
+    font-family: 'Yeon Sung', Arial;
+    font-size: 1rem;
+    border: none;
+    margin-right: 0.5rem;
+}
+
 /*INSTRUCTIONS COMP*/
 #p-instructions{
     font-size: 1em;
