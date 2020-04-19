@@ -1,4 +1,6 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
+import Sound from 'react-sound';
+import exitInstructions from '../audio/exit.m4a';
 
 export function Ending(props) {
 
@@ -13,7 +15,7 @@ export function Ending(props) {
               console.log(event);
            switch(e.key) {
            case "ArrowRight":
-              handleViewChange('ending');
+              handleViewChange('landing');
            console.log("right arrow key pressed");
            break;
            case "ArrowLeft":
@@ -30,7 +32,8 @@ export function Ending(props) {
 
 
     return (
-      <div id="d-landing">
+      <div id="exit-image">
+        <div id="d-landing">
                   <h id="h-entrance" >
                         You exited the maze!!
                   </h>
@@ -45,5 +48,13 @@ export function Ending(props) {
                         </button>
                   </div>
                 </div>
+                <Sound
+                           url={exitInstructions}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={false}
+                           volume="100"
+                       />
+      </div>
     );
 }

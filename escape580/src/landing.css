@@ -21,6 +21,14 @@ html, body{
     background-repeat: no-repeat;
 }
 
+#exit-image{
+    background-image: url('./images/cup.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #d-landing {
     margin: auto;
     text-align: center;
