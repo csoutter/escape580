@@ -2,7 +2,7 @@ import React, {useLayoutEffect, useEffect, useCallback, useState} from 'react';
 import Sound from 'react-sound';
 import '../levels.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
-import devils_snare from '../audio/devils_snare.m4a';
+import devils_snare from '../audio/devils_snare2.m4a';
 import rain_spell from '../audio/devilsSnare/rain_spell.m4a';
 import rain_sound from '../audio/devilsSnare/rain_soud.mov';
 import explosion from '../audio/devilsSnare/explosion.mov';
@@ -123,7 +123,7 @@ export function DevilsSnare(props) {
     }
 
     const finishedLevel = () => {
-        handleViewChange('level-two');
+        handleViewChange('level-four');
     }
 
     const handleSunlight = () => {
