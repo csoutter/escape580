@@ -1,9 +1,9 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
 import Sound from 'react-sound';
-import exitInstructions from '../audio/exit.m4a';
-import clapping from "../audio/cheering.mp3";
+import boggartInstructions from '../audio/level3.m4a';
+import rattling from "../audio/rattling.mp3";
 
-export function Ending(props) {
+export function Boggart(props) {
 
     const handleExitClick = () => {
         props.exit();
@@ -16,7 +16,7 @@ export function Ending(props) {
               console.log(event);
            switch(e.key) {
            case "ArrowRight":
-              handleViewChange('landing');
+              handleViewChange('level-four');
            console.log("right arrow key pressed");
            break;
            case "ArrowLeft":
@@ -33,36 +33,38 @@ export function Ending(props) {
 
 
     return (
-      <div id="exit-image">
+      <div id="boggart-image">
         <div id="d-landing">
                   <h id="h-entrance" >
-                        You exited the maze!!
+                        You made it to level 3!
                   </h>
                   <p id="p-landing">
-                  Congratulations, wizard, you made it out alive! The Triwizard cup is yours! 
-                  You may have passed this test but you will have many more to face, young wizard. 
-                  Onward and upward!
+                  Ah, you have encountered the boggart, a very mysterious creature! This creature knows all of your deepest, darkest fears and transforms into the thing that you are most afraid of. 
+                  There is a special spell that you must use in order to defeat the boggart. Let’s see if you can figure out what spell to use… 
                   </p>
                   <div id="d-button-holder">
-                      <button id="b-landing" onClick={handleExitClick}>
-                           Start Over
+            <button id="b-landing">
+                        Next
                         </button>
-                  </div>
-                </div>
-                <Sound
-                           url={exitInstructions}
+                        <button id="b-landing" onClick={handleExitClick}>
+                         Exit Maze
+                        </button>
+            </div>
+                       <Sound
+                           url={rattling}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={true}
+                           volume="40"
+                       />
+                       <Sound
+                           url={boggartInstructions}
                            playStatus={Sound.status.PLAYING}
                            autoLoad={true}
                            loop={false}
                            volume="100"
                        />
-                <Sound
-                           url={clapping}
-                           playStatus={Sound.status.PLAYING}
-                           autoLoad={true}
-                           loop={false}
-                           volume="5"
-                       />
+          </div>
       </div>
     );
 }

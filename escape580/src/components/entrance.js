@@ -2,7 +2,7 @@ import React, {useLayoutEffect, useEffect, useState, useCallback} from 'react';
 import Sound from 'react-sound';
 import '../entrance.css';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
-import entranceInstructions from '../audio/opening.m4a';
+import entranceInstructions from '../audio/opening2.m4a';
 
 export function Entrance(props) {
 
@@ -47,7 +47,7 @@ export function Entrance(props) {
                   Welcome to the Maze
             </h>
             <p id="p-landing">
-              (Spoken) So you think you are ready to tackle the maze...do you, wizard? Well, earlier this evening Professor Moody placed the Tri wizard cup in the maze. Only he knows where to find it. Your task will be to enter the maze and face the dangers that lie there. 
+              (Spoken) So you think you are ready to tackle the maze...do you, wizard? Well, earlier this evening Professor Moody placed the Triwizard cup in the maze. Only he knows where to find it. Your task will be to enter the maze and face the dangers that lie there. 
               In order to win, you want to be the first to find the cup. But first, you must make it out...ALIVE! 
               To begin your quest, click the right arrow button.
             </p>
