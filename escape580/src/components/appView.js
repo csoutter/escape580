@@ -6,11 +6,13 @@ import { Sphinx } from './sphinx';
 import {Prophecy } from "./prophecy";
 import {Ending} from "./ending";
 import { Boggart } from './boggart';
+import { Chamber } from './chamber';
+import { Instructions } from './instructions';
 
 
 export function AppView(props){
 
-    const[view, setView] = useState('enter');
+    const[view, setView] = useState('instructions');
     const[viewDisplay, setDisplay] = useState(<Entrance/>);
 
     const handleViewChange = (view) => {
@@ -32,6 +34,12 @@ export function AppView(props){
             />
             );
             break;
+            case 'instructions':
+            setDisplay(
+            <Instructions
+            handleViewChange={handleViewChange}
+            />);
+            break;
             case 'landing':
             setDisplay(
             <Landing/>
@@ -47,6 +55,12 @@ export function AppView(props){
             handleViewChange={handleViewChange}
             />
             );
+            break;
+            case 'level-two':
+            setDisplay(<Chamber
+            exit={handleExitClick}
+            handleViewChange={handleViewChange}
+            />);
             break;
             case 'level-three':
                 setDisplay(

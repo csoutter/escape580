@@ -1,4 +1,25 @@
 #devils-ul{
   list-style: none;
-  text-align: center;
+  text-align: left;
+}
+
+#d-options{
+    display: inline-block;
+}
+
+#p-instructions{
+    font-size: 1em;
+    text-align: left;
+    padding: 1rem;
+}
+
+#d-instructions {
+    margin: auto;
+    text-align: center;
+    width: 40rem;
+    margin-top: 10rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.85);
+    display: inline-block;
 }

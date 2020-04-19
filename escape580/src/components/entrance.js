@@ -21,7 +21,7 @@ export function Entrance(props) {
                     handleViewChange("level-one");
                     break;
                     case "ArrowLeft":
-                    handleViewChange('landing');
+                    handleViewChange('instructions');
                     }
     }, [props]);
 

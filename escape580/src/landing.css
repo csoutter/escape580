@@ -45,6 +45,22 @@ html, body{
     background-repeat: no-repeat;
 }
 
+#chamber-image{
+     background-image: url('./images/chamber_of_secrets.png');
+     height: 100vh;
+     width: 100vw;
+     background-size: cover;
+     background-repeat: no-repeat;
+}
+
+#instructions-image{
+    background-image: url('./images/great_hall_2.jpg');
+         height: 100vh;
+         width: 100vw;
+         background-size: cover;
+         background-repeat: no-repeat;
+}
+
 #d-landing {
     margin: auto;
     text-align: center;

@@ -127,7 +127,7 @@ export function DevilsSnare(props) {
               console.log(event);
            switch(e.key) {
            case "ArrowRight":
-              handleViewChange('level-four');
+              handleViewChange('level-two');
            console.log("right arrow key pressed");
            break;
            case "ArrowLeft":
