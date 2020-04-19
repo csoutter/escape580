@@ -1,8 +1,8 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
-import sphinxInstructions from '../audio/level4.mp3';
-import level4announce from '../audio/level4announce.mp3'
-import hiss from "../audio/hiss.mp3";
-import snake from "../audio/snakepit.wav";
+import sphinxInstructions from '../audio/sphinx/level4.mp3';
+import level4announce from '../audio/sphinx/level4announce.mp3'
+import hiss from "../audio/sphinx/hiss.mp3";
+import snake from "../audio/sphinx/snakepit.wav";
 import Sound from 'react-sound';
 
 
@@ -57,14 +57,7 @@ export function Sphinx(props) {
                         <button id="b-landing" onClick={handleExitClick}>
                          Exit Maze
                         </button>
-            </div>
-                        {/* <Sound
-                           url={level4announce}
-                           playStatus={Sound.status.PLAYING}
-                           autoLoad={true}
-                           loop={false}
-                           volume="100"
-                       /> */}
+                   </div>
                        <Sound
                            url={snake}
                            playStatus={Sound.status.PLAYING}
