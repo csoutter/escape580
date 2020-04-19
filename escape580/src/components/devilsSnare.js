@@ -34,13 +34,27 @@ export function DevilsSnare(props) {
 
     const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
-    const intro = <Sound
-                    url={devils_snare}
-                    playStatus={Sound.status.PLAYING}
-                    autoLoad={true}
-                    loop={false}
-                    volume={100}
-                            />;
+    const snare_music = "https://ia601000.us.archive.org/9/items/cd_harry-potter-and-the-sorcerers-stone-origi_john-williams/disc1/15.%20John%20Williams%20-%20In%20the%20Devil%27s%20Snare%20-%20The%20Flying%20Keys_sample.mp3";
+
+    const intro = <React.Fragment>
+      <Sound
+         url={devils_snare}
+         playStatus={Sound.status.PLAYING}
+         autoLoad={true}
+         loop={false}
+         volume={75}
+      />
+        <Sound
+          url={snare_music}
+          playStatus={Sound.status.PLAYING}
+          autoLoad={true}
+          loop={true}
+         volume={75}
+         />
+                  </React.Fragment>;
+
+
+
 
     const[sound, setSound] = useState(intro);
     const[correct, setCorrect] = useState(false);

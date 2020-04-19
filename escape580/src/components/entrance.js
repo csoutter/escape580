@@ -8,7 +8,9 @@ export function Entrance(props) {
 
    const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
-    const handleKey = useCallback((e) => {
+   const maze_march = "https://ia600104.us.archive.org/23/items/cd_harry-potter-and-the-goblet-of-fire_patrick-doyle-jarvis-cocker-jason-buckle/disc1/16.%20Patrick%20Doyle%20-%20Hogwarts%27%20March_sample.mp3";
+
+   const handleKey = useCallback((e) => {
          var event = window.event ? window.event : e;
             console.log(event);
          if(e.key === "ArrowRight") {
@@ -60,11 +62,11 @@ export function Entrance(props) {
                         </button>
             </div>
                        <Sound
-                           url={magicSound}
+                           url={maze_march}
                            playStatus={Sound.status.PLAYING}
                            autoLoad={true}
-                           loop={false}
-                           volume="5"
+                           loop={true}
+                           volume={25}
                        />
                        <Sound
                            url={entranceInstructions}
