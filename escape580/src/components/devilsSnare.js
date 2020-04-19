@@ -42,7 +42,7 @@ export function DevilsSnare(props) {
          playStatus={Sound.status.PLAYING}
          autoLoad={true}
          loop={false}
-         volume={75}
+         volume={50}
       />
         <Sound
           url={snare_music}

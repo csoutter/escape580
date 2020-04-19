@@ -62,7 +62,7 @@ export function Entrance(props) {
                            playStatus={Sound.status.PLAYING}
                            autoLoad={true}
                            loop={false}
-                           volume="100"
+                           volume={50}
                        />
           </div>
         </div>
