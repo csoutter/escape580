@@ -10,7 +10,7 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
               console.log(event);
            switch(e.key) {
            case "ArrowRight":
-              handleViewChange('level-four');
+              handleViewChange('level-three');
            console.log("right arrow key pressed");
            break;
            case "ArrowLeft":

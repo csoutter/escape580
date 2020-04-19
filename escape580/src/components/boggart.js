@@ -20,7 +20,7 @@ export function Boggart(props) {
            console.log("right arrow key pressed");
            break;
            case "ArrowLeft":
-           handleViewChange('enter');
+           handleViewChange('level-two');
            }
       }, [props]);
 
