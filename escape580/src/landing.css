@@ -43,6 +43,22 @@ p {
     background-repeat: no-repeat;
 }
 
+#sphinx-image{
+    background-image: url('./images/Sphinx.png');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#prophecy-image{
+    background-image: url('./images/prophecy.png');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #d-landing {
     margin: auto;
     text-align: center;

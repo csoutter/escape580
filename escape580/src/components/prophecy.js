@@ -1,4 +1,9 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
+import prophecyinstructions from '../audio/level4.mp3';
+import thunder from "../audio/thunder.wav";
+import foreboding from "../audio/foreboding.wav"
+// "Something Evil Approaches, A.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
+import Sound from 'react-sound';
 
 export function Prophecy(props) {
 
@@ -30,6 +35,8 @@ export function Prophecy(props) {
 
 
     return (
+      <div id="prophecy-image">
+
       <div id="d-landing">
                   <h id="h-entrance" >
                         Welcome to Level Five
@@ -45,6 +52,29 @@ export function Prophecy(props) {
                                Exit Maze
                               </button>
                   </div>
+                  <Sound
+                           url={foreboding}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={true}
+                           volume="40"
+                       />
+                       <Sound
+                           url={thunder}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={false}
+                           volume="80"
+                       />
+                       <Sound
+                           url={prophecyinstructions}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={false}
+                           volume="100"
+                           playbackRate=".7"
+                       />
+                </div>
                 </div>
     );
 }

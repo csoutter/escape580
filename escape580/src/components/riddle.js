@@ -1,4 +1,7 @@
-import React, {useLayoutEffect, useEffect, useCallback} from 'react';
+import React, { useState, useLayoutEffect, useCallback, useEffect } from 'react';
+import riddle from "../audio/riddle.mp3";
+import snake from "../audio/snakepit.wav";
+import Sound from 'react-sound';
 
 export function Riddle(props) {
     
@@ -15,11 +18,29 @@ export function Riddle(props) {
               console.log(event);
            switch(e.key) {
            case "ArrowRight":
-              handleViewChange('level-five');
-           console.log("right arrow key pressed");
-           break;
+               handleViewChange('level-five');
+                break;
            case "ArrowLeft":
-           handleViewChange('enter');
+                handleViewChange('enter');
+                break;
+            case "Space":
+                    console.log("hit spacebar");
+                    // this.forceUpdate();
+                handleViewChange('riddle');
+                break;
+            case " ":
+                console.log("hit space");
+                // setSound(
+                //     <Sound
+                //         url={riddle}
+                //         playStatus={Sound.status.PLAYING}
+                //         autoLoad={true}
+                //         loop={false}
+                //         volume="100"
+                //         playbackRate=".7"
+                //     />
+                // );
+                break;
            }
       }, [props]);
 
@@ -29,9 +50,11 @@ export function Riddle(props) {
                document.removeEventListener("keydown", handleKey);
              };
        });
-
+    
 
     return (
+        <div id="sphinx-image">
+
       <div id="d-landing">
                   <h id="h-entrance" >
                         Answer the Sphinx's Riddle
@@ -55,6 +78,22 @@ export function Riddle(props) {
                     Exit Maze
                   </button>
                   </div>
+                  <Sound
+                           url={riddle}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={false}
+                           volume="100"
+                           playbackRate=".7"
+                       />
+                       <Sound
+                           url={snake}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={true}
+                           volume="40"
+                       />
+                </div>
                 </div>
     );
 }
