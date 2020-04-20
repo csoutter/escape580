@@ -46,7 +46,7 @@ export function Chamber(props) {
                     playStatus={Sound.status.PLAYING}
                     autoLoad={true}
                     loop={true}
-                    volume={40}
+                    volume={75}
                    />
                    </React.Fragment>;
 
@@ -162,6 +162,9 @@ const handleSpace = () => {
         switch(index) {
             case -1:
             setSound(sort_hat_1_comp);
+            break;
+            case 4:
+            handleSelect(-1);
             break;
             case 1:
             setSound(sword_comp);

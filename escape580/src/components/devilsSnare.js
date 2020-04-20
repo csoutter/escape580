@@ -42,7 +42,7 @@ export function DevilsSnare(props) {
          playStatus={Sound.status.PLAYING}
          autoLoad={true}
          loop={false}
-         volume={75}
+         volume={50}
       />
         <Sound
           url={snare_music}
@@ -164,6 +164,9 @@ export function DevilsSnare(props) {
         switch(name) {
             case -1:
             setSound(rain);
+            break;
+            case 4:
+            handleSelect(-1);
             break;
             case 1:
             setSound(explosion_comp);
