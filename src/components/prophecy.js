@@ -183,6 +183,9 @@ export function Prophecy(props) {
             case -1:
             setSound(hermione);
             break;
+            case 4:
+            handleSelect(-1);
+            break;
             case 1:
             setSound(pettigrew);
             break;
