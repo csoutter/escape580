@@ -1,28 +1,16 @@
 # escape580
-An escape room simulation for people with disabilities. Created for UNC's COMP 580 course.
+In this game, you, the player, are a student at Hogwarts who is competing in the Triwizard Tournament. You will enter the maze and use your keyboard to navigate through the various obstacles and challenges. Pass all levels to win the Triwizard Cup!
+
+Created for UNC's COMP 580 course.
 
 Developed by Mary Halvorsen, Saumya Ray, and Cassidy Soutter
 
 Link: https://csoutter.github.io/escape580/
+Game, info, and instructions at the link above.
 
-# Adding Audio: 
- 
- With react, the best way to add audio elements is with React Sound. React sound can be installed with 
- 
- npm install react-sound. 
- 
-The dependencies for this should automatically be added when you have pulled the latest code, because the package-json files have been updated. If not, run npm install again. If that does not work, use the above command.
- 
- https://www.npmjs.com/package/react-sound
- 
- Import react Sound at the start of each javascript file you want to use it in with 
- 
- import Sound from 'react-sound';
- 
- The basic structure of a sound component is shown below, and should be incoroproated into the html of the component you are rendering on the page you want the audio to play on. Different attributes to the sound component control how long it plays, 
- from what point within the music file it starts playing, etc.
- 
- <Sound 
-  url={"filename.mp3"}
-  playStatus={Sound.status.PLAYING}
- />
+# Game Controls
+The navigation through each level of the maze will be done with the tab and space bar keys. Each level of the maze will begin with a description of the obstacle for that maze level, after which you will have the options to hear each option for how to proceed. 
+
+These options can be accessed by tabbing on the keyboard. The tab button will be the second button below the top left button, or the escape key. After identifying the top left button, move down 2 keys with your finger and you should be at the tab key.
+
+After hearing an option that you want to select as the right way to proceed, press the space bar to select that option. You will then hear a response indicating if you chose the correct option. If it is not correct, continue tabbing and select another option.
