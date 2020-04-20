@@ -169,6 +169,9 @@ export function Boggart(props) {
             case -1:
             setSound(tickle_comp);
             break;
+            case 4:
+            handleSelect(-1);
+            break;
             case 1:
             setSound(funny_comp);
             break;
@@ -221,12 +224,6 @@ export function Boggart(props) {
                        <button tabIndex="4" id="torture" onClick={handleTorture}>Torture Spell</button>
                        </div>
                        {sound}
-                    
-                  <div id="d-button-holder">
-                    <button id="b-landing" onClick={handleExitClick}>
-                         Exit Maze
-                    </button>
-                  </div>
           </div>
       </div>
     );

@@ -184,6 +184,9 @@ export function Riddle(props) {
             case -1:
             setSound(mummy);
             break;
+            case 4:
+            handleSelect(-1);
+            break;
             case 1:
             setSound(spider);
             break;

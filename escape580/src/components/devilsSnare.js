@@ -166,7 +166,7 @@ export function DevilsSnare(props) {
             setSound(rain);
             break;
             case 4:
-            setSound(rain);
+            handleSelect(-1);
             break;
             case 1:
             setSound(explosion_comp);
