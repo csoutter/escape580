@@ -163,6 +163,9 @@ const handleSpace = () => {
             case -1:
             setSound(sort_hat_1_comp);
             break;
+            case 4:
+            setSound(sort_hat_1_comp);
+            break;
             case 1:
             setSound(sword_comp);
             break;
