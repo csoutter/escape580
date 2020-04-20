@@ -5,8 +5,7 @@ Created for UNC's COMP 580 course.
 
 Developed by Mary Halvorsen, Saumya Ray, and Cassidy Soutter
 
-Link: https://csoutter.github.io/escape580/
-Game, info, and instructions at the link above.
+Demo Link: https://csoutter.github.io/escape580/
 
 # Game Controls
 The navigation through each level of the maze will be done with the tab and space bar keys. Each level of the maze will begin with a description of the obstacle for that maze level, after which you will have the options to hear each option for how to proceed. 
