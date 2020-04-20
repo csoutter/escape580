@@ -1,7 +1,7 @@
 import React, {useLayoutEffect, useState, useCallback} from 'react';
 import Sound from 'react-sound';
 import boggartInstructions from '../audio/boggart/level3.m4a';
-import rattling from "../audio/rattling.mp3";
+import rattling from "../audio/boggart/rattling.mp3";
 import torture_reply from "../audio/boggart/torture_reply.m4a";
 import dancing_reply from "../audio/boggart/dancing_reply.m4a";
 import funny_reply from "../audio/boggart/funny_reply.m4a";
@@ -41,7 +41,7 @@ export function Boggart(props) {
          playStatus={Sound.status.PLAYING}
          autoLoad={true}
          loop={false}
-         volume={75}
+         volume={100}
       />
         <Sound
           url={boggartInstructions}
@@ -69,7 +69,7 @@ export function Boggart(props) {
                                      playStatus={Sound.status.PLAYING}
                                      autoLoad={true}
                                      loop={false}
-                                     volume={75} />
+                                     volume={50} />
                                    </React.Fragment>;
 
     const funny_comp =   <React.Fragment>

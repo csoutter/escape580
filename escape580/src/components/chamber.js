@@ -182,13 +182,6 @@ const handleSpace = () => {
            var event = window.event ? window.event : e;
               console.log(event);
            switch(e.key) {
-           case "ArrowRight":
-              handleViewChange('level-three');
-           console.log("right arrow key pressed");
-           break;
-           case "ArrowLeft":
-           handleViewChange('level-one');
-           break;
            case "Tab":
            handleSelect(document.activeElement.tabIndex)
            break;

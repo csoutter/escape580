@@ -16,11 +16,8 @@ export function Entrance(props) {
             console.log(event);
           switch(e.key) {
                     case " ":
-                    console.log("right arrow key pressed");
                     handleViewChange("level-one");
                     break;
-                    case "ArrowLeft":
-                    handleViewChange('instructions');
                     }
     }, [props]);
 

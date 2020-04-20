@@ -33,7 +33,7 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
                           </h>
                           <p id="p-instructions">
                           <p>
-                            The navigation through each level of the maze will be done with the tab and spacebar keys. 
+                            The navigation through each level of the maze will be done with the tab and space bar keys. 
                             Each level of the maze will begin with a description of the obstacle
                             for that maze level, after which you will have the options to hear each option for
                             how to proceed. <br/>
@@ -48,7 +48,7 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
                             want to select as the right way to proceed, press the space bar to select that option.
                             You will then hear a response indicating if you chose the correct option. If it is not correct, continue tabbing and select another option.
                             </p>
-                            <p>If you are ready to begin, press the spacebar.</p>
+                            <p>If you are ready to begin, press the space bar.</p>
                           </p>
                         </div>
                         <Sound

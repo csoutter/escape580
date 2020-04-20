@@ -1,6 +1,6 @@
 import React, {useLayoutEffect, useEffect, useCallback} from 'react';
 import Sound from 'react-sound';
-import exitInstructions from '../audio/exit.m4a';
+import exitInstructions from '../audio/ending.m4a';
 import clapping from "../audio/cheering.mp3";
 
 export function Ending(props) {

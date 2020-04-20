@@ -184,12 +184,6 @@ export function DevilsSnare(props) {
            var event = window.event ? window.event : e;
               console.log(event);
            switch(e.key) {
-           case "ArrowRight":
-             handleViewChange('level-two');
-           break;
-           case "ArrowLeft":
-           handleViewChange('enter');
-           break;
            case "Tab":
            handleSelect(document.activeElement.tabIndex)
            break;
