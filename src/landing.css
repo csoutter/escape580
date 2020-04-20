@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Trade+Winds|Yeon+Sung&display=swap');
 
+@font-face{
+    font-family: 'HP Classic';
+    src: local('HP Classic'), url(./fonts/HarryP-MVZ6w.ttf) format('truetype');
+}
+
 html, body{
     font-family: 'Yeon Sung', Arial;
     height: 100%;
@@ -9,6 +14,14 @@ html, body{
 p {
     padding: 0.5rem;
     font-size: 1.25rem;
+}
+
+#h-entrance{
+    font-family: 'HP Classic', 'Yeon Sung', Arial;
+    margin-top: 10rem;
+    margin-bottom: 0rem;
+    text-align: center;
+    font-size: 4rem;
 }
 
 #landing-image{
@@ -99,6 +112,7 @@ p {
 }
 
 #h-landing {
+  font-family: 'HP Classic';
   margin-top: 10rem;
   text-align: center;
   font-size: 5rem;

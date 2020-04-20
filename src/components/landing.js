@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useCallback, useEffect } from 'react'
 import Sound from 'react-sound';
 import {AppView} from './appView';
 import '../landing.css';
+import '../fonts/LUMOS.TTF';
 import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
 import epicMusic from '../audio/bensound-epic.mp3';
 import landingInstructions from "../audio/landing.m4a";
@@ -13,12 +14,22 @@ function Greeting(props) {
 
     const handleViewChange = props.onClick === undefined ? null : props.onClick;
 
-    const[sound, setSound] = useState( <Sound
-                                           url={hpTheme}
-                                           playStatus={Sound.status.PLAYING}
-                                           autoLoad={true}
-                                           loop={false}
-                                        />);
+    const intro = <React.Fragment>
+    <Sound
+      url={hpTheme}
+      playStatus={Sound.status.PLAYING}
+      autoLoad={true}
+      loop={true}
+      volume={75}
+    />
+     <Sound
+      url={game_entrance}
+      playStatus={Sound.status.PLAYING}
+      autoLoad={true}
+      loop={false}
+      volume={50}
+     />
+    </React.Fragment>;
 
     const handleClick = () => {
         props.onClick();
@@ -39,19 +50,6 @@ function Greeting(props) {
                  document.removeEventListener("keydown", handleKey);
                };
          });
-
-    const stopSound = () => {
-       Sound.playStatus = Sound.status.STOPPED;
-            setSound(
-                <Sound
-                     url={hpTheme}
-                     playStatus={Sound.status.STOPPED}
-                     autoLoad={true}
-                     loop={false}
-                 />
-            );
-        }
-
     return (
        <div id="landing-image">
            <div id="d-landing">
@@ -63,15 +61,8 @@ function Greeting(props) {
             You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. 
             Press the space bar to begin.
             </p>
-            {sound}
         </div>
-        <Sound
-                     url={game_entrance}
-                     playStatus={Sound.status.PLAYING}
-                     autoLoad={true}
-                     loop={false}
-                     volume="90"
-                 />
+        {intro}
     </div>
     );
 }

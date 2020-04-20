@@ -21,6 +21,9 @@ export function Ending(props) {
            break;
            case "ArrowLeft":
            handleViewChange('enter');
+           case "Escape":
+           props.exit();
+           break;
            }
       }, [props]);
 
