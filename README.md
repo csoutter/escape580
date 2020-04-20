@@ -3,6 +3,8 @@ An escape room simulation for people with disabilities. Created for UNC's COMP 5
 
 Developed by Mary Halvorsen, Saumya Ray, and Cassidy Soutter
 
+Link: https://csoutter.github.io/escape580/
+
 # Adding Audio: 
  
  With react, the best way to add audio elements is with React Sound. React sound can be installed with 
