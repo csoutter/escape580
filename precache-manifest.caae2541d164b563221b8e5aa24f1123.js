@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "15bf513355a2a9bece5da3e20fee5022",
+    "revision": "1c11a0bb2cba0a2f049f9b647acb5bdf",
     "url": "/escape580/index.html"
   },
   {
-    "revision": "b514c98571dfc8b7fd5e",
+    "revision": "2030d4cde85f448dd86b",
     "url": "/escape580/static/css/main.612f5f41.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/escape580/static/js/2.50e6e3f7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b514c98571dfc8b7fd5e",
-    "url": "/escape580/static/js/main.43f88616.chunk.js"
+    "revision": "2030d4cde85f448dd86b",
+    "url": "/escape580/static/js/main.d21f0584.chunk.js"
   },
   {
     "revision": "d555cf363e0ea3fe5d37",
