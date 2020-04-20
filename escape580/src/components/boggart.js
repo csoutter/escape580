@@ -40,8 +40,8 @@ export function Boggart(props) {
          url={rattling}
          playStatus={Sound.status.PLAYING}
          autoLoad={true}
-         loop={false}
-         volume={100}
+         loop={true}
+         volume={75}
       />
         <Sound
           url={boggartInstructions}
@@ -50,7 +50,7 @@ export function Boggart(props) {
           loop={false}
          volume={75}
          />
-                  </React.Fragment>;
+      </React.Fragment>;
 
     const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
@@ -214,8 +214,8 @@ export function Boggart(props) {
                         Welcome to level three!
                   </h>
                   <p id="p-landing">
-                  Ah, you have encountered the boggart, a very mysterious creature! This creature knows all of your deepest, darkest fears and transforms into the thing that you are most afraid of. 
-                  There is a special spell that you must use in order to defeat the boggart. Let’s see if you can figure out what spell to use… 
+                  Ah, you have encountered the boggart, a very mysterious creature! This creature knows all of your deepest, darkest fears and transforms into the thing that you are most afraid of.
+                  There is a special spell that you must use in order to defeat the boggart. Let’s see if you can figure out what spell to use…
                   </p>
                   <div id="d-options">
                        <button id="tickle" tabIndex = "1" onClick={handleTickle}> Tickle Spell </button>
