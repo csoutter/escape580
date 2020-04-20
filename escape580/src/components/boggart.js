@@ -40,7 +40,7 @@ export function Boggart(props) {
          url={rattling}
          playStatus={Sound.status.PLAYING}
          autoLoad={true}
-         loop={false}
+         loop={true}
          volume={75}
       />
         <Sound
@@ -50,7 +50,7 @@ export function Boggart(props) {
           loop={false}
          volume={75}
          />
-                  </React.Fragment>;
+      </React.Fragment>;
 
     const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
