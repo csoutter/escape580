@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/escape580/static/css/main.612f5f41.chunk.css",
-    "main.js": "/escape580/static/js/main.d21f0584.chunk.js",
-    "main.js.map": "/escape580/static/js/main.d21f0584.chunk.js.map",
+    "main.css": "/escape580/static/css/main.11a59c57.chunk.css",
+    "main.js": "/escape580/static/js/main.c8bac402.chunk.js",
+    "main.js.map": "/escape580/static/js/main.c8bac402.chunk.js.map",
     "runtime-main.js": "/escape580/static/js/runtime-main.6d07fea3.js",
     "runtime-main.js.map": "/escape580/static/js/runtime-main.6d07fea3.js.map",
-    "static/js/2.50e6e3f7.chunk.js": "/escape580/static/js/2.50e6e3f7.chunk.js",
-    "static/js/2.50e6e3f7.chunk.js.map": "/escape580/static/js/2.50e6e3f7.chunk.js.map",
+    "static/js/2.375a84f8.chunk.js": "/escape580/static/js/2.375a84f8.chunk.js",
+    "static/js/2.375a84f8.chunk.js.map": "/escape580/static/js/2.375a84f8.chunk.js.map",
     "index.html": "/escape580/index.html",
-    "precache-manifest.caae2541d164b563221b8e5aa24f1123.js": "/escape580/precache-manifest.caae2541d164b563221b8e5aa24f1123.js",
+    "precache-manifest.4d7f0d913c9e86ddc3c2f285518892ee.js": "/escape580/precache-manifest.4d7f0d913c9e86ddc3c2f285518892ee.js",
     "service-worker.js": "/escape580/service-worker.js",
-    "static/css/main.612f5f41.chunk.css.map": "/escape580/static/css/main.612f5f41.chunk.css.map",
-    "static/js/2.50e6e3f7.chunk.js.LICENSE.txt": "/escape580/static/js/2.50e6e3f7.chunk.js.LICENSE.txt",
+    "static/css/main.11a59c57.chunk.css.map": "/escape580/static/css/main.11a59c57.chunk.css.map",
+    "static/js/2.375a84f8.chunk.js.LICENSE.txt": "/escape580/static/js/2.375a84f8.chunk.js.LICENSE.txt",
+    "static/media/HarryP-MVZ6w.ttf": "/escape580/static/media/HarryP-MVZ6w.181ef9a7.ttf",
+    "static/media/LUMOS.TTF": "/escape580/static/media/LUMOS.d5d39b03.TTF",
     "static/media/landing.css": "/escape580/static/media/prophecy.683dfa7f.png",
     "static/media/bensound-epic.mp3": "/escape580/static/media/bensound-epic.780462c2.mp3",
     "static/media/chamber_intro.m4a": "/escape580/static/media/chamber_intro.9c6a1f84.m4a",
@@ -92,8 +94,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6d07fea3.js",
-    "static/js/2.50e6e3f7.chunk.js",
-    "static/css/main.612f5f41.chunk.css",
-    "static/js/main.d21f0584.chunk.js"
+    "static/js/2.375a84f8.chunk.js",
+    "static/css/main.11a59c57.chunk.css",
+    "static/js/main.c8bac402.chunk.js"
   ]
 }

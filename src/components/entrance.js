@@ -18,6 +18,8 @@ export function Entrance(props) {
                     case " ":
                     handleViewChange("level-one");
                     break;
+                    case "Escape":
+                    props.exit();
                     }
     }, [props]);
 

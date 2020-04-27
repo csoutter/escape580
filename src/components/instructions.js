@@ -14,6 +14,8 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
            case " ":
               handleViewChange('enter');
            break;
+           case "Escape":
+           props.exit();
        }
       }, [props]);
 
