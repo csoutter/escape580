@@ -14,6 +14,8 @@ import torture_spell from "../audio/boggart/torture_spell.m4a";
 import tickle_spell from "../audio/boggart/tickle_spell.m4a";
 import dancing_spell from "../audio/boggart/dancing_spell.m4a";
 import funny_spell from "../audio/boggart/funny_spell.m4a";
+import transition from '../audio/transition.mov';
+
 
 function RenderReply(props) {
     return (
@@ -54,7 +56,22 @@ export function Boggart(props) {
 
     const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
-    const[sound, setSound] = useState(intro);
+    const finishTransition = () => {
+        setSound(intro);
+    }
+
+    const transit = <React.Fragment>
+                      <Sound
+                         url={transition}
+                         playStatus={Sound.status.PLAYING}
+                         onFinishedPlaying ={finishTransition}
+                         autoLoad={true}
+                         loop={false}
+                         volume={50}
+                      />
+                     </React.Fragment>;
+
+    const[sound, setSound] = useState(transit);
     const[correct, setCorrect] = useState(false);
 
     const tickle_comp = <React.Fragment>

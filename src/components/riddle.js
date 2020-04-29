@@ -3,6 +3,8 @@ import Sound from 'react-sound';
 import '../levels.css';
 import riddle from "../audio/sphinx/riddle.mp3";
 import snake from "../audio/sphinx/snakepit.wav";
+import transition from '../audio/transition.mov';
+
 
 import dementor_answer from '../audio/sphinx/dementor_answer.m4a';
 import dementor_sound from '../audio/sphinx/dementor_sound.wav';
@@ -55,7 +57,22 @@ export function Riddle(props) {
                     volume={50} />
                     </React.Fragment>;
 
-    const[sound, setSound] = useState(intro);
+    const finishTransition = () => {
+           setSound(intro);
+    };
+
+    const transit = <React.Fragment>
+                     <Sound
+                       url={transition}
+                       playStatus={Sound.status.PLAYING}
+                       onFinishedPlaying ={finishTransition}
+                       autoLoad={true}
+                       loop={false}
+                       volume={50}
+                     />
+                     </React.Fragment>;
+
+    const[sound, setSound] = useState(transit);
     const[correct, setCorrect] = useState(false);
 
     const mummy = <React.Fragment>

@@ -4,7 +4,8 @@ import '../levels.css';
 import prophecyinstructions from '../audio/prophecy/level5.m4a';
 import theprophecy from '../audio/prophecy/prophecy.m4a';
 import thunder from "../audio/prophecy/thunder.wav";
-import foreboding from "../audio/prophecy/foreboding.wav"
+import foreboding from "../audio/prophecy/foreboding.wav";
+import transition from '../audio/transition.mov';
 // "Something Evil Approaches, A.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
 
 import hermione_g from '../audio/prophecy/hermione.m4a';
@@ -78,6 +79,21 @@ export function Prophecy(props) {
                            volume="80"
                        />
                     </React.Fragment>;
+
+    const finishTransition = () => {
+       setSound(intro);
+     };
+
+    const transit = <React.Fragment>
+                            <Sound
+                               url={transition}
+                               playStatus={Sound.status.PLAYING}
+                               onFinishedPlaying ={finishTransition}
+                               autoLoad={true}
+                               loop={false}
+                               volume={50}
+                            />
+                           </React.Fragment>;
     
     const hermione = <React.Fragment>
                     <Sound
@@ -156,7 +172,7 @@ export function Prophecy(props) {
         handleViewChange('ending');
     }
 
-    const[sound, setSound] = useState(intro);
+    const[sound, setSound] = useState(transit);
     const[correct, setCorrect] = useState(false);
 
     const handleSpace = () => {

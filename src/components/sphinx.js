@@ -6,7 +6,7 @@ import level4announce from '../audio/sphinx/level4announce.mp3'
 import hiss from "../audio/sphinx/hiss.mp3";
 import snake from "../audio/sphinx/snakepit.wav";
 import spacebar from "../audio/sphinx/spacebar.m4a";
-
+import transition from '../audio/transition.mov';
 
 function RenderReply(props) {
     return (
@@ -81,13 +81,26 @@ export function Sphinx(props) {
                        />
                     </React.Fragment>;
 
-    const[sound, setSound] = useState(intro);
-    
+    const finishTransition = () => {
+               setSound(intro);
+        };
+
+        const transit = <React.Fragment>
+                         <Sound
+                           url={transition}
+                           playStatus={Sound.status.PLAYING}
+                           onFinishedPlaying ={finishTransition}
+                           autoLoad={true}
+                           loop={false}
+                           volume={50}
+                         />
+                         </React.Fragment>;
+
+    const[sound, setSound] = useState(transit);
 
     const handleSpace = () => {
         handleViewChange('riddle');
     }
-
 
       const handleKey = useCallback((e) => {
            var event = window.event ? window.event : e;

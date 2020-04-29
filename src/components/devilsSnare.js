@@ -1,7 +1,7 @@
 import React, {useLayoutEffect, useEffect, useCallback, useState} from 'react';
 import Sound from 'react-sound';
 import '../levels.css';
-import magicSound from '../audio/zapsplat_fantasy_reversed_backwards_magical_glissando_001_46178.mp3';
+import transition from '../audio/transition.mov';
 import devils_snare from '../audio/devils_snare2.m4a';
 import rain_spell from '../audio/devilsSnare/rain_spell.m4a';
 import rain_sound from '../audio/devilsSnare/rain_soud.mov';
@@ -11,13 +11,13 @@ import sunlight_spell from '../audio/devilsSnare/sunlight_spell.m4a';
 import scream_spell from '../audio/devilsSnare/scream_spell.m4a';
 import scream_sound from '../audio/devilsSnare/scream.mov';
 import explosion_reply from '../audio/devilsSnare/explosion_reply.m4a';
-import rain_reply from '../audio/devilsSnare/rain_reply.m4a';
+import rain_reply from '../audio/devilsSnare/rain_spell_2.m4a';
 import sunlight_reply from '../audio/devilsSnare/sunlight_reply.m4a';
 import scream_reply from '../audio/devilsSnare/scream_reply.m4a';
 
 
 function RenderReply(props) {
-    return (
+    return (r
         <React.Fragment>
              <Sound
                url={props.reply}
@@ -53,10 +53,22 @@ export function DevilsSnare(props) {
          />
                   </React.Fragment>;
 
+       const finishTransition = () => {
+        setSound(intro);
+       }
 
+       const transit = <React.Fragment>
+                              <Sound
+                                url={transition}
+                                playStatus={Sound.status.PLAYING}
+                                onFinishedPlaying ={finishTransition}
+                                autoLoad={true}
+                                loop={false}
+                                volume={50}
+                              />
+                            </React.Fragment>;
 
-
-    const[sound, setSound] = useState(intro);
+    const[sound, setSound] = useState(transit);
     const[correct, setCorrect] = useState(false);
 
     const rain = <React.Fragment>

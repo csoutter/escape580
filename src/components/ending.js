@@ -46,11 +46,6 @@ export function Ending(props) {
                   You may have passed this test but you will have many more to face, young wizard. 
                   Onward and upward!
                   </p>
-                  <div id="d-button-holder">
-                      <button id="b-landing" onClick={handleExitClick}>
-                           Start Over
-                        </button>
-                  </div>
                 </div>
                 <Sound
                            url={exitInstructions}

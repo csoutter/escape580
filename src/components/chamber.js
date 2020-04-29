@@ -1,6 +1,7 @@
 import React, {useLayoutEffect, useCallback, useState} from 'react';
 import Sound from 'react-sound';
-import '../levels.css'
+import '../levels.css';
+import transition from '../audio/transition.mov';
 import chamber_intro from '../audio/chamber/chamber_intro.m4a';
 import sort_hat_1 from '../audio/chamber/sorting_hat_1.m4a';
 import sort_hat_2 from '../audio/chamber/sorting_hat_2.m4a';
@@ -50,11 +51,22 @@ export function Chamber(props) {
                    />
                    </React.Fragment>;
 
+     const finishTransition = () => {
+             setSound(intro);
+            }
 
+      const transit = <React.Fragment>
+                                     <Sound
+                                       url={transition}
+                                       playStatus={Sound.status.PLAYING}
+                                       onFinishedPlaying ={finishTransition}
+                                       autoLoad={true}
+                                       loop={false}
+                                       volume={50}
+                                     />
+                                   </React.Fragment>;
 
-
-
-    const[sound, setSound] = useState(intro);
+    const[sound, setSound] = useState(transit);
 
       const sword_comp = <React.Fragment>
                                       <Sound
