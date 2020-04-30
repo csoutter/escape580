@@ -6,6 +6,15 @@ export function Instructions(props) {
 
 const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
+const instruct =  <Sound
+                         url={instructions}
+                         playStatus={Sound.status.PLAYING}
+                         autoLoad={true}
+                         loop={true}
+                         volume={100}
+                       />;
+
+ const[sound, setSound] = useState(instruct);
 
  const handleKey = useCallback((e) => {
            var event = window.event ? window.event : e;
@@ -13,6 +22,9 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
            switch(e.key) {
            case " ":
               handleViewChange('enter');
+           break;
+           case "Escape":
+           props.exit();
            break;
        }
       }, [props]);
@@ -39,7 +51,7 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
                             how to proceed. <br/>
                             </p>
                             <p>
-                            These options can be accessed by tabbing on the keyboard. The tab button will be the second button below the top
+                            These options can be accessed by tabbing on the keyboard. On most keyboards, the tab button will be the second button below the top
                             left button, or the escape key. After identifying the top left button, move down 2 keys with your finger and you should be
                             at the tab key.<br/>
                             </p>
@@ -51,13 +63,7 @@ const handleViewChange = props.handleViewChange === undefined ? null : props.han
                             <p>If you are ready to begin, press the space bar.</p>
                           </p>
                         </div>
-                        <Sound
-                           url={instructions}
-                           playStatus={Sound.status.PLAYING}
-                           autoLoad={true}
-                           loop={false}
-                           volume={100}
-                        />
+                        {sound}
         </div>
         );
 }

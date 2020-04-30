@@ -1,4 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react';
+import Sound from 'react-sound';
 import {Entrance} from './entrance';
 import {Landing} from './landing';
 import {DevilsSnare} from './devilsSnare';
@@ -9,6 +10,7 @@ import {Ending} from "./ending";
 import { Boggart } from './boggart';
 import { Chamber } from './chamber';
 import { Instructions } from './instructions';
+import transition from '../audio/transition.mov';
 
 
 export function AppView(props){
@@ -38,6 +40,7 @@ export function AppView(props){
             case 'instructions':
             setDisplay(
             <Instructions
+             exit={handleExitClick}
             handleViewChange={handleViewChange}
             />);
             break;

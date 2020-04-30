@@ -1,27 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "15bf513355a2a9bece5da3e20fee5022",
+    "revision": "bc999a4a1ccefcb3ad113dc29c13cdb3",
     "url": "/escape580/index.html"
   },
   {
-    "revision": "b514c98571dfc8b7fd5e",
-    "url": "/escape580/static/css/main.612f5f41.chunk.css"
+    "revision": "dd1753cce9f5906003b3",
+    "url": "/escape580/static/css/main.11a59c57.chunk.css"
   },
   {
-    "revision": "b83c325acf8d8bf1e5dd",
-    "url": "/escape580/static/js/2.50e6e3f7.chunk.js"
+    "revision": "c54dc3730f6f8c23fc29",
+    "url": "/escape580/static/js/2.375a84f8.chunk.js"
   },
   {
     "revision": "0c642dbff179889abda1a42753a27d19",
-    "url": "/escape580/static/js/2.50e6e3f7.chunk.js.LICENSE.txt"
+    "url": "/escape580/static/js/2.375a84f8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b514c98571dfc8b7fd5e",
-    "url": "/escape580/static/js/main.43f88616.chunk.js"
+    "revision": "dd1753cce9f5906003b3",
+    "url": "/escape580/static/js/main.c8bac402.chunk.js"
   },
   {
     "revision": "d555cf363e0ea3fe5d37",
     "url": "/escape580/static/js/runtime-main.6d07fea3.js"
+  },
+  {
+    "revision": "181ef9a7aee45c119e68f294e8426a3a",
+    "url": "/escape580/static/media/HarryP-MVZ6w.181ef9a7.ttf"
+  },
+  {
+    "revision": "d5d39b03fed844ed5319a7f9cbcc1271",
+    "url": "/escape580/static/media/LUMOS.d5d39b03.TTF"
   },
   {
     "revision": "024c88843a0ced44d2c5a1e3790ab2a7",
