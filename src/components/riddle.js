@@ -6,7 +6,7 @@ import snake from "../audio/sphinx/snakepit.wav";
 import transition from '../audio/transition.mov';
 
 
-import dementor_answer from '../audio/sphinx/dementor_answer.m4a';
+import dementor_answer from '../audio/sphinx/dementor.m4a';
 import dementor_sound from '../audio/sphinx/dementor_sound.wav';
 import dementor_reply from '../audio/sphinx/dementor_reply.m4a';
 
@@ -86,7 +86,7 @@ export function Riddle(props) {
             playStatus={Sound.status.PLAYING}
             autoLoad={true}
             loop={false}
-            volume={75} />
+            volume={100} />
     </React.Fragment>;
 
     const spider = <React.Fragment>
@@ -96,13 +96,13 @@ export function Riddle(props) {
             autoLoad={true}
             loop={false}
             volume={100}
-            playbackRate='.5' />
+         />
         <Sound
             url={spider_sound}
             playStatus={Sound.status.PLAYING}
             autoLoad={true}
             loop={false}
-            volume={25} />
+            volume={50} />  
     </React.Fragment>;
 
     const skrewt = <React.Fragment>
@@ -137,8 +137,14 @@ export function Riddle(props) {
     </React.Fragment>;
 
     const handleMummy = () => {
-        // While a mummy can be a disguise, this is not the right answer. Answer again quickly before the sphinx attacks you!
-        setSound(<RenderReply reply={mummy_reply} />);
+        // While a mummy can be disguised as your actual mother, this is not the right answer. Answer again quickly before I attack!
+        setSound(<Sound
+            url={mummy_reply}
+            playStatus={Sound.status.PLAYING}
+            autoLoad={true}
+            loop={false}
+            volume={100}
+        />);
     }
 
     const handleSpider = () => {
@@ -151,7 +157,7 @@ export function Riddle(props) {
             loop={false}
             volume={100}
             onFinishedPlaying={finishedLevel}
-            playbackRate='.8'
+            playbackRate='.9'
         />);
     }
 
@@ -163,12 +169,11 @@ export function Riddle(props) {
             autoLoad={true}
             loop={false}
             volume={100}
-            playbackRate='.8'
         />);
     }
 
     const handleDementor = () => {
-        // A dementor is a creature you wouldn't want to kiss, as you would lose your soul! But "e" is the end of middle, and the beginning of end.
+        // A dementor is a creature you wouldn't want to kiss, as you would lose your soul! But "e" is the end of middle, and the beginning of end. Try again quickly
         //setSound(<RenderReply reply={dementor_reply}/>);
         setSound(<Sound
             url={dementor_reply}
@@ -176,7 +181,6 @@ export function Riddle(props) {
             autoLoad={true}
             loop={false}
             volume={100}
-            playbackRate='.5'
         />);
     }
 
