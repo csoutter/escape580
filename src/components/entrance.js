@@ -11,12 +11,57 @@ export function Entrance(props) {
 
   const maze_march = "https://ia600104.us.archive.org/23/items/cd_harry-potter-and-the-goblet-of-fire_patrick-doyle-jarvis-cocker-jason-buckle/disc1/16.%20Patrick%20Doyle%20-%20Hogwarts%27%20March_sample.mp3";
 
+  const intro = <React.Fragment>
+    <Sound
+      url={maze_march}
+      playStatus={Sound.status.PLAYING}
+      autoLoad={true}
+      loop={true}
+      volume={25}
+    />
+    <Sound
+      url={maze_entrance}
+      playStatus={Sound.status.PLAYING}
+      autoLoad={true}
+      loop={false}
+      volume={50}
+    />
+  </React.Fragment>;
+  
+  const [sound, setSound] = useState(intro);
+
+  const repeatIntro = () => {
+    Sound.playStatus = Sound.status.STOPPED;
+    setSound(
+      <Sound
+        url={maze_march}
+        playStatus={Sound.status.STOPPED}
+        autoLoad={true}
+        loop={false}
+      />
+    );
+
+    setSound(
+      <Sound
+        url={maze_entrance}
+        playStatus={Sound.status.STOPPED}
+        autoLoad={true}
+        loop={false}
+      />
+    );
+
+    setSound(intro);
+  }
+
   const handleKey = useCallback((e) => {
     var event = window.event ? window.event : e;
     console.log(event);
     switch (e.key) {
       case " ":
         handleViewChange("level-one");
+        break;
+      case "r":
+        repeatIntro();
         break;
       case "Escape":
         props.exit();
@@ -49,21 +94,8 @@ export function Entrance(props) {
           In order to win, you want to be the first to find the cup. But first, you must make it out...ALIVE!
           To begin your quest, press the space bar.
             </p>
-        <Sound
-          url={maze_march}
-          playStatus={Sound.status.PLAYING}
-          autoLoad={true}
-          loop={true}
-          volume={25}
-        />
-        <Sound
-          url={maze_entrance}
-          playStatus={Sound.status.PLAYING}
-          autoLoad={true}
-          loop={false}
-          volume={50}
-        />
       </div>
+      {sound}
     </div>
   );
 }

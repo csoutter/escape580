@@ -31,12 +31,12 @@ export function Instructions(props) {
    const handleKey = useCallback((e) => {
       var event = window.event ? window.event : e;
       console.log(event);
-      if (event.key === 'Enter') {
-         repeatIntro();
-      }
       switch (e.key) {
          case " ":
             handleViewChange('enter');
+            break;
+         case "r":
+            repeatIntro();
             break;
          case "Escape":
             props.exit();

@@ -216,15 +216,16 @@ export function DevilsSnare(props) {
    const handleKey = useCallback((e) => {
       var event = window.event ? window.event : e;
       console.log(event);
-      if (event.key === 'Enter') {
-         repeatIntro();
-      }
+      
       switch (e.key) {
          case "Tab":
             handleSelect(document.activeElement.tabIndex)
             break;
          case " ":
             handleSpace();
+            break;
+         case "r":
+            repeatIntro();
             break;
          case "Escape":
             props.exit();
@@ -253,10 +254,10 @@ export function DevilsSnare(props) {
                around you, you must use a spell to escape!
                       </p>
             <div id="d-options">
-               <button id="rain" tabIndex="1" onKeyPress={handleRain}> Rain Spell </button>
-               <button tabIndex="2" id="explosion" onKeyPress={handleExplosion}>Explosion Spell</button>
-               <button tabIndex="3" id="sunlight" onKeyPress={handleSunlight}>Sunlight Spell</button>
-               <button tabIndex="4" id="scream" onKeyPress={handleScream}>Scream Spell</button>
+               <button id="rain" tabIndex="1" onClick={handleRain}> Rain Spell </button>
+               <button tabIndex="2" id="explosion" onClick={handleExplosion}>Explosion Spell</button>
+               <button tabIndex="3" id="sunlight" onClick={handleSunlight}>Sunlight Spell</button>
+               <button tabIndex="4" id="scream" onClick={handleScream}>Scream Spell</button>
             </div>
             {sound}
          </div>

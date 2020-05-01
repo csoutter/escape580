@@ -225,15 +225,16 @@ export function Boggart(props) {
   const handleKey = useCallback((e) => {
     var event = window.event ? window.event : e;
     console.log(event);
-    if (event.key === 'Enter') {
-      repeatIntro();
-    }
+
     switch (e.key) {
       case "Tab":
         handleSelect(document.activeElement.tabIndex)
         break;
       case " ":
         handleSpace();
+        break;
+      case "r":
+        repeatIntro();
         break;
       case "Escape":
         props.exit();
@@ -259,10 +260,10 @@ export function Boggart(props) {
           There is a special spell that you must use in order to defeat the boggart. Let’s see if you can figure out what spell to use…
                   </p>
         <div id="d-options">
-          <button id="tickle" tabIndex="1" onKeyPress={handleTickle}> Tickle Spell </button>
-          <button tabIndex="2" id="funny" onKeyPress={handleFunny}>Funny Spell</button>
-          <button tabIndex="3" id="dancing" onKeyPress={handleDancing}>Dancing Spell</button>
-          <button tabIndex="4" id="torture" onKeyPress={handleTorture}>Torture Spell</button>
+          <button id="tickle" tabIndex="1" onClick={handleTickle}> Tickle Spell </button>
+          <button tabIndex="2" id="funny" onClick={handleFunny}>Funny Spell</button>
+          <button tabIndex="3" id="dancing" onClick={handleDancing}>Dancing Spell</button>
+          <button tabIndex="4" id="torture" onClick={handleTorture}>Torture Spell</button>
         </div>
         {sound}
       </div>

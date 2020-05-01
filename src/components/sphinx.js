@@ -88,25 +88,25 @@ export function Sphinx(props) {
   const repeatIntro = () => {
     Sound.playStatus = Sound.status.STOPPED;
     setSound(
-       <Sound
-          url={sphinxInstructions}
-          playStatus={Sound.status.STOPPED}
-          autoLoad={true}
-          loop={false}
-       />
+      <Sound
+        url={sphinxInstructions}
+        playStatus={Sound.status.STOPPED}
+        autoLoad={true}
+        loop={false}
+      />
     );
 
     setSound(
-       <Sound
-          url={snake}
-          playStatus={Sound.status.STOPPED}
-          autoLoad={true}
-          loop={false}
-       />
+      <Sound
+        url={snake}
+        playStatus={Sound.status.STOPPED}
+        autoLoad={true}
+        loop={false}
+      />
     );
 
     setSound(intro);
- }
+  }
 
   const transit = <React.Fragment>
     <Sound
@@ -128,12 +128,13 @@ export function Sphinx(props) {
   const handleKey = useCallback((e) => {
     var event = window.event ? window.event : e;
     console.log(event);
-    if (event.key === 'Enter') {
-      repeatIntro();
-    }
+
     switch (e.key) {
       case " ":
         handleSpace();
+        break;
+      case "r":
+        repeatIntro();
         break;
       case "Escape":
         props.exit();

@@ -248,9 +248,6 @@ export function Riddle(props) {
     const handleKey = useCallback((e) => {
         var event = window.event ? window.event : e;
         console.log(event);
-        if (event.key === 'Enter') {
-            repeatIntro();
-        }
         switch (e.key) {
             case "Tab":
                 handleSelect(document.activeElement.tabIndex)
@@ -258,11 +255,12 @@ export function Riddle(props) {
             case " ":
                 handleSpace();
                 break;
+            case "r":
+                repeatIntro();
+                break;
             case "Escape":
                 props.exit();
         }
-
-
     }, [props]);
 
     useLayoutEffect(() => {
@@ -289,10 +287,10 @@ export function Riddle(props) {
                     Which creature would you be unwilling to kiss? <br></br>
                 </p>
                 <div id="d-options">
-                    <button id="mummy" tabIndex="1" onKeyPress={handleMummy}> Mummy </button>
-                    <button tabIndex="2" id="spider" onKeyPress={handleSpider}>Spider</button>
-                    <button tabIndex="3" id="dementor" onKeyPress={handleDementor}>Dementor</button>
-                    <button tabIndex="4" id="skrewt" onKeyPress={handleSkrewt}>Blast-Ended Skrewt</button>
+                    <button id="mummy" tabIndex="1" onClick={handleMummy}> Mummy </button>
+                    <button tabIndex="2" id="spider" onClick={handleSpider}>Spider</button>
+                    <button tabIndex="3" id="dementor" onClick={handleDementor}>Dementor</button>
+                    <button tabIndex="4" id="skrewt" onClick={handleSkrewt}>Blast-Ended Skrewt</button>
                 </div>
                 {sound}
                 {/* {sound} */}

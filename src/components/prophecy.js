@@ -238,15 +238,15 @@ export function Prophecy(props) {
   const handleKey = useCallback((e) => {
     var event = window.event ? window.event : e;
     console.log(event);
-    if (event.key === 'Enter') {
-      repeatIntro();
-    }
     switch (e.key) {
       case "Tab":
         handleSelect(document.activeElement.tabIndex)
         break;
       case " ":
         handleSpace();
+        break;
+      case "r":
+        repeatIntro();
         break;
       case "Escape":
         props.exit();
@@ -279,10 +279,10 @@ export function Prophecy(props) {
           the one with the power to vanquish the Dark Lord will be born as the seventh month dies...
                       </p>
         <div id="d-options">
-          <button id="hermione" tabIndex="1" onKeyPress={handleHermione}> Hermione Granger </button>
-          <button tabIndex="2" id="pettigrew" onKeyPress={handlePettigrew}>Peter Pettigrew</button>
-          <button tabIndex="3" id="neville" onKeyPress={handleNeville}>Neville Longbottom</button>
-          <button tabIndex="4" id="snape" onKeyPress={handleSnape}>Severus Snape</button>
+          <button id="hermione" tabIndex="1" onClick={handleHermione}> Hermione Granger </button>
+          <button tabIndex="2" id="pettigrew" onClick={handlePettigrew}>Peter Pettigrew</button>
+          <button tabIndex="3" id="neville" onClick={handleNeville}>Neville Longbottom</button>
+          <button tabIndex="4" id="snape" onClick={handleSnape}>Severus Snape</button>
         </div>
         {sound}
       </div>

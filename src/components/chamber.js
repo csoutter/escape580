@@ -218,15 +218,15 @@ export function Chamber(props) {
    const handleKey = useCallback((e) => {
       var event = window.event ? window.event : e;
       console.log(event);
-      if (event.key === 'Enter') {
-         repeatIntro();
-      }
       switch (e.key) {
          case "Tab":
             handleSelect(document.activeElement.tabIndex)
             break;
          case " ":
             handleSpace();
+            break;
+         case "r":
+            repeatIntro();
             break;
          case "Escape":
             props.exit();
@@ -256,10 +256,10 @@ export function Chamber(props) {
             <div id="d-options>">
                <p>
                   <div id="d-options">
-                     <button id="hat" tabIndex="1" onKeyPress={handleHat}> Put on the sorting hat and hope that it provides you with magical powers!</button>
-                     <button tabIndex="2" id="sword" onKeyPress={handleSword}> Look inside the sorting hat… there’s something shiny in there that might help.</button>
-                     <button tabIndex="3" id="basilisk" onKeyPress={handleBasilisk}> Throw the sorting hat at the basilisk to distract it so that you can run out of the chamber.</button>
-                     <button tabIndex="4" id="gryffindor" onKeyPress={handleGryffindor}> Put on the sorting hat and the power of gryffindor will help you defeat the basilisk.</button>
+                     <button id="hat" tabIndex="1" onClick={handleHat}> Put on the sorting hat and hope that it provides you with magical powers!</button>
+                     <button tabIndex="2" id="sword" onClick={handleSword}> Look inside the sorting hat… there’s something shiny in there that might help.</button>
+                     <button tabIndex="3" id="basilisk" onClick={handleBasilisk}> Throw the sorting hat at the basilisk to distract it so that you can run out of the chamber.</button>
+                     <button tabIndex="4" id="gryffindor" onClick={handleGryffindor}> Put on the sorting hat and the power of gryffindor will help you defeat the basilisk.</button>
                   </div>
                </p>
             </div>
