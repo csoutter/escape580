@@ -157,7 +157,6 @@ export function Riddle(props) {
             loop={false}
             volume={100}
             onFinishedPlaying={finishedLevel}
-            playbackRate='.9'
         />);
     }
 

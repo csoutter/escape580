@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useEffect, useCallback, useState } from 'react';
 import Sound from 'react-sound';
 import '../levels.css';
-import prophecyinstructions from '../audio/prophecy/level5.m4a';
+import prophecyinstructions from '../audio/prophecy/prophecyinstructions.m4a';
 import theprophecy from '../audio/prophecy/prophecy.m4a';
 import thunder from "../audio/prophecy/thunder.wav";
 import foreboding from "../audio/prophecy/foreboding.wav";
@@ -62,7 +62,6 @@ export function Prophecy(props) {
       onFinishedPlaying={finishedinstructions}
       autoLoad={true}
       loop={false}
-      playbackRate=".7"
       volume={100} />
     <Sound
       url={foreboding}
@@ -122,7 +121,7 @@ export function Prophecy(props) {
       playStatus={Sound.status.PLAYING}
       autoLoad={true}
       loop={false}
-      volume={75} />
+      volume={100} />
   </React.Fragment>;
 
   const pettigrew = <React.Fragment>
@@ -132,7 +131,7 @@ export function Prophecy(props) {
       autoLoad={true}
       loop={false}
       volume={100}
-      playbackRate='.5' />
+      playbackRate='.7' />
   </React.Fragment>;
 
   const neville = <React.Fragment>
