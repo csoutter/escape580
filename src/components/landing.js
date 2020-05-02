@@ -55,7 +55,7 @@ function Greeting(props) {
         <div id="landing-image">
            <div id="d-landing">
                 <h id="h-landing" >
-                    Escape the Maze
+                    Escape the Maze: <br></br>A Hogwarts Quest
                 </h>
                 <p id="p-landing">
                 Welcome to <span>Escape the Maze</span>! <br></br> 

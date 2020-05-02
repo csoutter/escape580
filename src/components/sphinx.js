@@ -7,6 +7,7 @@ import hiss from "../audio/sphinx/hiss.mp3";
 import snake from "../audio/sphinx/snakepit.wav";
 import spacebar from "../audio/sphinx/spacebar.m4a";
 import transition from '../audio/transition.mov';
+import help_message from '../audio/help.m4a';
 
 function RenderReply(props) {
   return (
@@ -44,17 +45,6 @@ export function Sphinx(props) {
       /></React.Fragment>);
 
   }
-
-  // const finishedspace = () => {
-  //     setSound(<Sound
-  //       url={snake}
-  //       playStatus={Sound.status.PLAYING}
-  //       autoLoad={true}
-  //       loop={true}
-  //       volume={100}
-  //       playbackRate='.8'
-  //     />);
-  //     }
 
   const intro = <React.Fragment>
     <Sound
@@ -118,9 +108,22 @@ export function Sphinx(props) {
       volume={50}
     />
   </React.Fragment>;
-
+const help = <React.Fragment>
+<Sound
+   url={help_message}
+   playStatus={Sound.status.PLAYING}
+   onFinishedPlaying={repeatIntro}
+   autoLoad={true}
+   loop={false}
+   volume={100}
+/>
+</React.Fragment>;
   const [sound, setSound] = useState(transit);
 
+  const handleHelp = () => {
+    Sound.playStatus = Sound.status.STOPPED;
+    setSound(help);
+}
   const handleSpace = () => {
     handleViewChange('riddle');
   }
@@ -136,6 +139,9 @@ export function Sphinx(props) {
       case "r":
         repeatIntro();
         break;
+        case "h":
+          handleHelp();
+          break;
       case "Escape":
         props.exit();
     }

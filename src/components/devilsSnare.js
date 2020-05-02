@@ -14,6 +14,7 @@ import explosion_reply from '../audio/devilsSnare/explosion_reply_2.m4a';
 import rain_reply from '../audio/devilsSnare/rain_spell_2.m4a';
 import sunlight_reply from '../audio/devilsSnare/sunlight_reply_2.m4a';
 import scream_reply from '../audio/devilsSnare/scream_reply_2.m4a';
+import help_message from '../audio/help.m4a';
 
 function RenderReply(props) {
    return (<React.Fragment>
@@ -77,7 +78,17 @@ export function DevilsSnare(props) {
 
       setSound(intro);
    }
-
+   const help = <React.Fragment>
+      <Sound
+         url={help_message}
+         playStatus={Sound.status.PLAYING}
+         onFinishedPlaying={repeatIntro}
+         autoLoad={true}
+         loop={false}
+         volume={100}
+      />
+   </React.Fragment>;
+   
    const transit = <React.Fragment>
       <Sound
          url={transition}
@@ -174,6 +185,10 @@ export function DevilsSnare(props) {
       setSound(<RenderReply reply={scream_reply} />);
    }
 
+   const handleHelp = () => {
+      Sound.playStatus = Sound.status.STOPPED;
+      setSound(help);
+   }
    const handleSpace = () => {
       let id = console.log(document.activeElement.id);
       switch (id) {
@@ -216,7 +231,7 @@ export function DevilsSnare(props) {
    const handleKey = useCallback((e) => {
       var event = window.event ? window.event : e;
       console.log(event);
-      
+
       switch (e.key) {
          case "Tab":
             handleSelect(document.activeElement.tabIndex)
@@ -226,6 +241,9 @@ export function DevilsSnare(props) {
             break;
          case "r":
             repeatIntro();
+            break;
+         case "h":
+            handleHelp();
             break;
          case "Escape":
             props.exit();
@@ -247,10 +265,10 @@ export function DevilsSnare(props) {
                       </h>
             <p id="p-landing">
                Oh no! You have slipped and fallen into a Devil’s Snare pit trap.
-               Devil’s snare plant consists of thick, snake-like vines that twist
+               Devil’s Snare plant consists of thick, snake-like vines that twist
                around it’s victims unless they remember to relax and stop moving.
                The Devil’s Snare plant likes a dark, damp environment. You have
-               already moved too much and the Devil’s snare plant has a strong grip
+               already moved too much and the Devil’s Snare plant has a strong grip
                around you, you must use a spell to escape!
                       </p>
             <div id="d-options">

@@ -20,6 +20,8 @@ import neville_reply from '../audio/prophecy/neville_reply.m4a';
 import s_snape from '../audio/prophecy/snape.m4a';
 import snape_reply from '../audio/prophecy/snape_reply.m4a';
 
+import help_message from '../audio/help.m4a';
+
 
 function RenderReply(props) {
   return (
@@ -114,7 +116,16 @@ export function Prophecy(props) {
       volume={50}
     />
   </React.Fragment>;
-
+  const help = <React.Fragment>
+    <Sound
+      url={help_message}
+      playStatus={Sound.status.PLAYING}
+      onFinishedPlaying={repeatIntro}
+      autoLoad={true}
+      loop={false}
+      volume={100}
+    />
+  </React.Fragment>;
   const hermione = <React.Fragment>
     <Sound
       url={hermione_g}
@@ -131,7 +142,7 @@ export function Prophecy(props) {
       autoLoad={true}
       loop={false}
       volume={100}
-      playbackRate='.7' />
+      />
   </React.Fragment>;
 
   const neville = <React.Fragment>
@@ -141,7 +152,7 @@ export function Prophecy(props) {
       autoLoad={true}
       loop={false}
       volume={100}
-      playbackRate='.8' />
+       />
 
   </React.Fragment>;
 
@@ -172,7 +183,7 @@ export function Prophecy(props) {
       loop={false}
       volume={100}
       onFinishedPlaying={finishedLevel}
-      playbackRate='.8'
+
     />);
   }
 
@@ -194,6 +205,11 @@ export function Prophecy(props) {
 
   const [sound, setSound] = useState(transit);
   const [correct, setCorrect] = useState(false);
+
+  const handleHelp = () => {
+    Sound.playStatus = Sound.status.STOPPED;
+    setSound(help);
+  }
 
   const handleSpace = () => {
     let id = console.log(document.activeElement.id);
@@ -247,6 +263,9 @@ export function Prophecy(props) {
       case "r":
         repeatIntro();
         break;
+      case "h":
+        handleHelp();
+        break;
       case "Escape":
         props.exit();
     }
@@ -263,19 +282,19 @@ export function Prophecy(props) {
     <div id="prophecy-image">
       <div id="d-landing">
         <h id="h-entrance" >
-          Who could the prophecy be about?
+          Welcome to Level Five 
                       </h>
         <p id="p-landing">
-          You are now at the final challenge. From the maze, you have been transported to the Hall of Prophecies.
+          You are now at the final challenge of this Hogwarts Quest. After answering the sphinx's riddle, you have been transported to the Hall of Prophecies.
           The walls are crashing down and the prophecy orbs are rolling off their shelves!
           One of the orbs near you shatters and you can hear a thrilling prophecy.
-          It seems to be about Harry Potter, but who else could it be about? You must answer correctly to win the TriWizard Tournament!
-          This is the prophecy:
-
-          The one with the power to vanquish the Dark Lord approaches... born to those who have thrice defied him,
+          It seems to be about Harry Potter, but who else could it be about? You must answer correctly to go back to the maze and win the Triwizard Tournament!
+          This is the prophecy you hear:
+          <br></br>
+          <em>The one with the power to vanquish the Dark Lord approaches... born to those who have thrice defied him,
           born as the seventh month dies... and the Dark Lord will mark him as his equal, but he will have power the Dark Lord knows not...
           and either must die at the hand of the other for neither can live while the other survives...
-          the one with the power to vanquish the Dark Lord will be born as the seventh month dies...
+          the one with the power to vanquish the Dark Lord will be born as the seventh month dies...</em>
                       </p>
         <div id="d-options">
           <button id="hermione" tabIndex="1" onClick={handleHermione}> Hermione Granger </button>

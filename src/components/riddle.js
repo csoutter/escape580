@@ -4,7 +4,7 @@ import '../levels.css';
 import riddle from "../audio/sphinx/riddle.mp3";
 import snake from "../audio/sphinx/snakepit.wav";
 import transition from '../audio/transition.mov';
-
+import help_message from '../audio/help.m4a';
 
 import dementor_answer from '../audio/sphinx/dementor.m4a';
 import dementor_sound from '../audio/sphinx/dementor_sound.wav';
@@ -12,7 +12,7 @@ import dementor_reply from '../audio/sphinx/dementor_reply.m4a';
 
 import mummy_answer from '../audio/sphinx/mummy.m4a';
 import mummy_sound from '../audio/sphinx/mummy.wav';
-import mummy_reply from '../audio/sphinx/mummy-reply.m4a';
+import mummy_reply from '../audio/sphinx/mummy_reply.m4a';
 
 import spider_answer from '../audio/sphinx/spider.m4a';
 import spider_sound from '../audio/sphinx/spider-sound.mp3';
@@ -112,7 +112,7 @@ export function Riddle(props) {
             autoLoad={true}
             loop={false}
             volume={100}
-            playbackRate='.8' />
+             />
         <Sound
             url={skrewt_sound}
             playStatus={Sound.status.PLAYING}
@@ -148,8 +148,8 @@ export function Riddle(props) {
     }
 
     const handleSpider = () => {
-        // A spy will try to find out your secrets, and "er" is a sound made when searching for a word. 
-        // The middle of middle is “i”, and the end of end is “d”, so this forms the word spider! you are correct!
+            // A spy will try to find out your secrets, and "er" is a sound made when searching for a word. 
+            // The middle of middle is “i”, and the end of end is “d”, so this forms the word spider! you are correct!
         setSound(<Sound
             url={spider_reply}
             playStatus={Sound.status.PLAYING}
@@ -209,6 +209,22 @@ export function Riddle(props) {
         setSound(intro);
     }
 
+    const help = <React.Fragment>
+      <Sound
+         url={help_message}
+         playStatus={Sound.status.PLAYING}
+         onFinishedPlaying={repeatIntro}
+         autoLoad={true}
+         loop={false}
+         volume={100}
+      />
+   </React.Fragment>;
+
+    const handleHelp = () => {
+        Sound.playStatus = Sound.status.STOPPED;
+        setSound(help);
+    }
+
     const handleSpace = () => {
         let id = console.log(document.activeElement.id);
         switch (id) {
@@ -260,6 +276,9 @@ export function Riddle(props) {
                 break;
             case "r":
                 repeatIntro();
+                break;
+            case "h":
+                handleHelp();
                 break;
             case "Escape":
                 props.exit();

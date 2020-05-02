@@ -2,7 +2,8 @@ import React, { useLayoutEffect, useEffect, useCallback } from 'react';
 import Sound from 'react-sound';
 import exitInstructions from '../audio/ending.m4a';
 import clapping from "../audio/cheering.mp3";
-
+import fireworks from "../audio/fireworks.mp3";
+import congrats from '../audio/congrats.m4a'
 export function Ending(props) {
 
   const handleExitClick = () => {
@@ -39,27 +40,36 @@ export function Ending(props) {
     <div id="exit-image">
       <div id="d-landing">
         <h id="h-entrance" >
-          You exited the maze!!
+        You are the Champion!!
                   </h>
         <p id="p-landing">
-          Congratulations, wizard, you made it out alive! The Triwizard cup is yours!
-          You may have passed this test but you will have many more to face, young wizard.
-          Onward and upward!
+        Congratulations! You made it out of the maze alive. 
+        You have won and are the Champion!  
+        You have proved yourself as a budding wizard and have eternal fame and glory. 
+        You may have passed this test but you will have many more to face! 
+        Onward and upward!
                   </p>
       </div>
       <Sound
-        url={exitInstructions}
+        url={congrats}
         playStatus={Sound.status.PLAYING}
         autoLoad={true}
         loop={false}
         volume="100"
       />
       <Sound
+        url={fireworks}
+        playStatus={Sound.status.PLAYING}
+        autoLoad={true}
+        loop={false}
+        volume="30"
+      />
+      <Sound
         url={clapping}
         playStatus={Sound.status.PLAYING}
         autoLoad={true}
         loop={false}
-        volume="5"
+        volume="25"
       />
     </div>
   );

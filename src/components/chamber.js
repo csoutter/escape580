@@ -13,6 +13,7 @@ import sword_reply from '../audio/chamber/sword_reply.m4a';
 import gryffindor_reply from '../audio/chamber/gryffindor_reply.m4a';
 import snake_hiss from '../audio/chamber/snakehiss2.mp3';
 import sword_draw from '../audio/chamber/swordraw.mp3';
+import help_message from '../audio/help.m4a';
 
 function RenderReply(props) {
    return (
@@ -85,6 +86,17 @@ export function Chamber(props) {
          autoLoad={true}
          loop={false}
          volume={50}
+      />
+   </React.Fragment>;
+
+   const help = <React.Fragment>
+      <Sound
+         url={help_message}
+         playStatus={Sound.status.PLAYING}
+         onFinishedPlaying={repeatIntro}
+         autoLoad={true}
+         loop={false}
+         volume={100}
       />
    </React.Fragment>;
 
@@ -177,6 +189,11 @@ export function Chamber(props) {
       setSound(<RenderReply reply={gryffindor_reply} />)
    }
 
+   const handleHelp = () => {
+      Sound.playStatus = Sound.status.STOPPED;
+      setSound(help);
+   }
+
    const handleSpace = () => {
       let id = console.log(document.activeElement.id);
       switch (id) {
@@ -228,6 +245,9 @@ export function Chamber(props) {
          case "r":
             repeatIntro();
             break;
+         case "h":
+            handleHelp();
+            break;
          case "Escape":
             props.exit();
       }
@@ -247,19 +267,19 @@ export function Chamber(props) {
                Welcome to Level Two
                           </h>
             <p id="p-landing">
-               You have entered the chamber of secrets. The monstrous basilisk lurks in the shadows
+               You have entered the Chamber of Secrets. The monstrous basilisk lurks in the shadows
                 of the chamber, and if you look the basilisk in the eye, you will be frozen and unable
                 to move! Your job is to defeat the basilisk. Fawkes the Phoenix has flown into the
                 chamber and has now blinded the basilisk so that you no longer have to worry about being
-                frozen! You spot the sorting hat on the ground nearby… what do you do next?
+                frozen! You spot the Sorting Hat on the ground nearby… what do you do next?
                           </p>
             <div id="d-options>">
                <p>
                   <div id="d-options">
-                     <button id="hat" tabIndex="1" onClick={handleHat}> Put on the sorting hat and hope that it provides you with magical powers!</button>
-                     <button tabIndex="2" id="sword" onClick={handleSword}> Look inside the sorting hat… there’s something shiny in there that might help.</button>
-                     <button tabIndex="3" id="basilisk" onClick={handleBasilisk}> Throw the sorting hat at the basilisk to distract it so that you can run out of the chamber.</button>
-                     <button tabIndex="4" id="gryffindor" onClick={handleGryffindor}> Put on the sorting hat and the power of gryffindor will help you defeat the basilisk.</button>
+                     <button id="hat" tabIndex="1" onClick={handleHat}> Put on the Sorting Hat and hope that it provides you with magical powers!</button>
+                     <button tabIndex="2" id="sword" onClick={handleSword}> Look inside the Sorting Hat… there’s something shiny in there that might help.</button>
+                     <button tabIndex="3" id="basilisk" onClick={handleBasilisk}> Throw the Sorting Hat at the basilisk to distract it so that you can run out of the Chamber.</button>
+                     <button tabIndex="4" id="gryffindor" onClick={handleGryffindor}> Put on the Sorting Hat and the power of Gryffindor will help you defeat the basilisk.</button>
                   </div>
                </p>
             </div>

@@ -15,7 +15,7 @@ import tickle_spell from "../audio/boggart/tickle_spell.m4a";
 import dancing_spell from "../audio/boggart/dancing_spell.m4a";
 import funny_spell from "../audio/boggart/funny_spell.m4a";
 import transition from '../audio/transition.mov';
-
+import help_message from '../audio/help.m4a';
 
 function RenderReply(props) {
   return (
@@ -92,6 +92,16 @@ export function Boggart(props) {
     />
   </React.Fragment>;
 
+  const help = <React.Fragment>
+    <Sound
+      url={help_message}
+      playStatus={Sound.status.PLAYING}
+      onFinishedPlaying={repeatIntro}
+      autoLoad={true}
+      loop={false}
+      volume={100}
+    />
+  </React.Fragment>;
   const [sound, setSound] = useState(transit);
   const [correct, setCorrect] = useState(false);
 
@@ -183,6 +193,11 @@ export function Boggart(props) {
     setSound(<RenderReply reply={torture_reply} />);
   }
 
+  const handleHelp = () => {
+    Sound.playStatus = Sound.status.STOPPED;
+    setSound(help);
+  }
+
   const handleSpace = () => {
     let id = console.log(document.activeElement.id);
     switch (id) {
@@ -236,6 +251,9 @@ export function Boggart(props) {
       case "r":
         repeatIntro();
         break;
+      case "h":
+        handleHelp();
+        break;
       case "Escape":
         props.exit();
     }
@@ -253,7 +271,7 @@ export function Boggart(props) {
     <div id="boggart-image">
       <div id="d-landing">
         <h id="h-entrance" >
-          Welcome to level three!
+          Welcome to Level Three!
                   </h>
         <p id="p-landing">
           Ah, you have encountered the boggart, a very mysterious creature! This creature knows all of your deepest, darkest fears and transforms into the thing that you are most afraid of.

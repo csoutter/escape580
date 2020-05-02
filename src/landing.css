@@ -49,7 +49,7 @@ p {
 }
 
 #boggart-image{
-    background-image: url('./images/boggart.jpg');
+    background-image: url('./images/boggart_maze.jpg');
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -57,7 +57,7 @@ p {
 }
 
 #sphinx-image{
-    background-image: url('./images/Sphinx.png');
+    background-image: url('./images/Sphinx.jpg');
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -80,7 +80,7 @@ p {
 }
 
 #chamber-image{
-     background-image: url('./images/chamber_of_secrets.png');
+     background-image: url('./images/chamber_of_secrets.jpg');
      height: 100vh;
      width: 100vw;
      background-size: cover;
@@ -105,7 +105,7 @@ p {
     background: rgba(255, 255, 255, 0.6);
     display: inline-block;
     padding:1rem;
-    border: dotted salmon thin;
+    border: dotted gray thin;
 }
 
 #d-landing:hover {
