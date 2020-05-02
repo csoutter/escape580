@@ -52,29 +52,23 @@ function Greeting(props) {
                };
          });
     return (
-       <div id="landing-image">
+        <div id="landing-image">
            <div id="d-landing">
-               <div> <h id="h-landing" >
-                Escape the Maze
-            </h></div>
-           
-            {/* <p id="p-landing">
-            Welcome to our game! <br></br>As a player, you are a student at Hogwarts who is competing in the Triwizard cup.
-            You are about to enter the maze, where you will use your keyboard to navigate through the obstacles of the maze. 
-            Press the space bar to begin.
-            </p> */}
-            <p id="p-landing">
-            Welcome to <span>Escape the Maze</span>! <br></br> 
-            In this game, you are a student at Hogwarts School of Witchcraft and Wizardry. To prove your mastery of magic, you are 
-            competing in the Triwizard Tournament. You are about to start the Third Task, the final task in this Tournament. 
-            You will start by entering a magical maze, with challenges and obstacles at every turn. 
-            These will test your magical knowledge and quick thinking.
-            You will use your keyboard to navigate through these obstacles.
-            <br></br>Press the space bar to begin.
-            </p>
+                <h id="h-landing" >
+                    Escape the Maze
+                </h>
+                <p id="p-landing">
+                Welcome to <span>Escape the Maze</span>! <br></br> 
+             In this game, you are a student at Hogwarts School of Witchcraft and Wizardry. To prove your mastery of magic, you are 
+             competing in the Triwizard Tournament. You are about to start the Third Task, the final task in this Tournament. 
+             You will begin by entering a magical maze, with challenges and obstacles at every turn. 
+             These will test your magical knowledge and quick thinking.
+             You will use your keyboard to navigate through these obstacles.
+             <br></br>Press the space bar to begin.
+                </p>
+            </div>
+            {intro}
         </div>
-        {intro}
-    </div>
     );
 }
 

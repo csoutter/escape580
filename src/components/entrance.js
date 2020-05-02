@@ -87,7 +87,7 @@ export function Entrance(props) {
     <div id="entrance-image">
       <div id="d-landing">
         <h id="h-entrance" >
-          Welcome to the Maze
+          Ready to start?
             </h>
         <p id="p-landing">
           So you think you are ready to tackle the maze...do you, wizard? Well, earlier this evening Professor Moody placed the Triwizard cup in the maze. Only he knows where to find it. Your task will be to enter the maze and face the dangers that lie there.

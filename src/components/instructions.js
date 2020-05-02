@@ -1,13 +1,13 @@
 import React, { useLayoutEffect, useCallback, useState } from 'react';
 import Sound from 'react-sound';
 import instructions from "../audio/instructions.m4a";
-
+import howtoplay from "../audio/how-to-play.m4a";
 export function Instructions(props) {
 
    const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
    const instruct = <Sound
-      url={instructions}
+      url={howtoplay}
       playStatus={Sound.status.PLAYING}
       autoLoad={true}
       loop={true}
@@ -55,26 +55,32 @@ export function Instructions(props) {
    return (
       <div id="instructions-image">
          <div id="d-instructions">
-            <h id="h-entrance" >
-               Game Controls
-                          </h>
+            <h id="h-landing" >
+               How to Play
+            </h>
             <p id="p-instructions">
                <p>
-                  The navigation through each level of the maze will be done with the tab and space bar keys.
                   Each level of the maze will begin with a description of the obstacle
-                  for that maze level, after which you will have the options to hear each option for
-                            how to proceed. <br />
+                  for that maze level. After this you will hear four options and will have to choose 
+                  the correct option to proceed to the next level.
                </p>
                <p>
-                  These options can be accessed by tabbing on the keyboard. On most keyboards, the tab button will be the second button below the top
-                  left button, or the escape key. After identifying the top left button, move down 2 keys with your finger and you should be
-                            at the tab key.<br />
+                  To repeat the description of the obstacle, press the "r" key at any time.
                </p>
                <p>
-                  After hearing an option that you
-                  want to select as the right way to proceed, press the space bar to select that option.
-                  You will then hear a response indicating if you chose the correct option. If it is not correct, continue tabbing and select another option.
-                            </p>
+                  To hear all possible options in a level, press the "tab" key on your keyboard. Continue to press the tab key to hear more options. 
+                  Once you have heard all options, pressing tab again will repeat the options. On most keyboards, the tab button will be the second button below the top
+                  left button, or the escape key. After identifying the top left button, move down 2 keys with your finger and you should be at the tab key.<br />
+               </p>
+               <p>
+                  To select the latest option you have heard, press the space bar key. This will select that option.
+                  You will then hear a response indicating if you chose the correct option. 
+                  If it is not correct, continue tabbing and select another option.
+                  If you do not hear any response after pressing the space bar, press tab again and then press the space bar.
+               </p>
+               <p>
+                  Press the "h" key at any time to hear a condensed version of these instructions
+               </p>
                <p>If you are ready to begin, press the space bar.</p>
             </p>
          </div>

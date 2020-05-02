@@ -15,9 +15,6 @@ p {
     padding: 0.5rem;
     font-size: 1.25rem;
 }
-span {
-    font-weight: bold;
-}
 
 #h-entrance{
     font-family: 'HP Classic', 'Yeon Sung', Arial;
@@ -103,36 +100,27 @@ span {
     text-align: center;
     width: 40rem;
     margin-top: 10vh;
-    /* background-color: white; */
+    background-color: white;
     border-radius: 0.5rem;
-    /* background: rgba(255, 255, 255, 0.7); */
+    background: rgba(255, 255, 255, 0.6);
     display: inline-block;
+    padding:1rem;
+    border: dotted salmon thin;
 }
 
+#d-landing:hover {
+    background: rgba(255, 255, 255, 1.0);
+}
 #p-landing {
     padding: 0.5rem;
     font-size: 1.25rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.5);
-    padding:5% 10% 5% 10%;
-    margin: 10rem 0 10rem 0;
 }
 
 #h-landing {
   font-family: 'HP Classic';
-  /* margin: 10rem 0 10rem 0; */
-  padding: 20%;
+  margin-top: 10rem;
   text-align: center;
   font-size: 5rem;
-  background-color: white;
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.5);
-    padding:5% 10% 5% 10%;
-}
-
-#p-landing:hover, #h-landing:hover {
-    background: rgba(255, 255, 255, 1.0);
 }
 
 #b-landing{
@@ -151,4 +139,8 @@ span {
 #b-holder {
     width: 15rem;
     margin: auto;
+}
+
+span {
+    font-weight: bold;
 }
