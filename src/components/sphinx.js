@@ -136,10 +136,10 @@ const help = <React.Fragment>
       case " ":
         handleSpace();
         break;
-      case "r":
+      case "ArrowRight":
         repeatIntro();
         break;
-        case "h":
+        case "ArrowLeft":
           handleHelp();
           break;
       case "Escape":
