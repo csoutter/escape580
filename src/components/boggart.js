@@ -59,28 +59,20 @@ export function Boggart(props) {
   const finishTransition = () => {
     setSound(intro);
   }
+
+   const resumeBackgroundMusic = () => {
+           setSound( <Sound
+                           url={rattling}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={true}
+                           volume={75}
+                         />);}
+
   const repeatIntro = () => {
-    Sound.playStatus = Sound.status.STOPPED;
-    setSound(
-      <Sound
-        url={rattling}
-        playStatus={Sound.status.STOPPED}
-        autoLoad={true}
-        loop={false}
-      />
-    );
-
-    setSound(
-      <Sound
-        url={boggartInstructions}
-        playStatus={Sound.status.STOPPED}
-        autoLoad={true}
-        loop={false}
-      />
-    );
-
     setSound(intro);
   }
+
   const transit = <React.Fragment>
     <Sound
       url={transition}
@@ -96,7 +88,7 @@ export function Boggart(props) {
     <Sound
       url={help_message}
       playStatus={Sound.status.PLAYING}
-      onFinishedPlaying={repeatIntro}
+      onFinishedPlaying={resumeBackgroundMusic}
       autoLoad={true}
       loop={false}
       volume={100}

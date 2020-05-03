@@ -75,6 +75,24 @@ export function Sphinx(props) {
     setSound(intro);
   };
 
+ const resumeBackgroundMusic = () => {
+   setSound(<React.Fragment>
+   <Sound
+         url={snake}
+         playStatus={Sound.status.PLAYING}
+         autoLoad={true}
+         loop={true}
+         volume="40"
+       />
+       <Sound
+         url={hiss}
+         playStatus={Sound.status.PLAYING}
+         autoLoad={true}
+         loop={false}
+         volume="60"
+       />
+   </React.Fragment>);}
+
   const repeatIntro = () => {
     Sound.playStatus = Sound.status.STOPPED;
     setSound(
@@ -108,11 +126,12 @@ export function Sphinx(props) {
       volume={50}
     />
   </React.Fragment>;
+
 const help = <React.Fragment>
 <Sound
    url={help_message}
    playStatus={Sound.status.PLAYING}
-   onFinishedPlaying={repeatIntro}
+   onFinishedPlaying={resumeBackgroundMusic}
    autoLoad={true}
    loop={false}
    volume={100}

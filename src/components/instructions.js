@@ -1,13 +1,14 @@
 import React, { useLayoutEffect, useCallback, useState } from 'react';
 import Sound from 'react-sound';
-import instructions from "../audio/instructions.m4a";
-import howtoplay from "../audio/how-to-play.m4a";
+import instructions from "../audio/help.m4a";
+import updated_instructions from '../audio/updated_instructions_3.m4a';
+
 export function Instructions(props) {
 
    const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
    const instruct = <Sound
-      url={howtoplay}
+      url={updated_instructions}
       playStatus={Sound.status.PLAYING}
       autoLoad={true}
       loop={true}
@@ -16,7 +17,7 @@ export function Instructions(props) {
 
    const [sound, setSound] = useState(instruct);
    const repeatIntro = () => {
-      Sound.playStatus = Sound.status.STOPPED;
+     Sound.playStatus = Sound.status.STOPPED;
       setSound(
          <Sound
             url={instructions}
@@ -25,9 +26,9 @@ export function Instructions(props) {
             loop={false}
          />
       );
-
-      setSound(instruct);
+  setSound(instruct);
    }
+
    const handleKey = useCallback((e) => {
       var event = window.event ? window.event : e;
       console.log(event);
@@ -36,7 +37,7 @@ export function Instructions(props) {
             handleViewChange('enter');
             break;
          case "ArrowRight":
-            repeatIntro();
+           repeatIntro();
             break;
          case "Escape":
             props.exit();
@@ -63,9 +64,7 @@ export function Instructions(props) {
                   Each level of the maze will begin with a description of the obstacle
                   for that maze level. After this you will hear four options and will have to choose 
                   the correct option to proceed to the next level.
-               </p>
-               <p>
-                  To repeat the description of the obstacle, press the "r" key at any time.
+                   To repeat the description of the obstacle, press the right arrow key at any time.
                </p>
                <p>
                   To hear all possible options in a level, press the "tab" key on your keyboard. Continue to press the tab key to hear more options. 
@@ -79,9 +78,9 @@ export function Instructions(props) {
                   If you do not hear any response after pressing the space bar, press tab again and then press the space bar.
                </p>
                <p>
-                  Press the "h" key at any time to hear a condensed version of these instructions
+                  Press the left arrow key at any time to hear a condensed version of these instructions.
+                  If you are ready to begin, press the space bar.
                </p>
-               <p>If you are ready to begin, press the space bar.</p>
             </p>
          </div>
          {sound}
