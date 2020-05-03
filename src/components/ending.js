@@ -40,15 +40,16 @@ export function Ending(props) {
     <div id="exit-image">
       <div id="d-landing">
         <h id="h-entrance" >
-        You are the Champion!!
+          You are the Champion!!
                   </h>
         <p id="p-landing">
-        Congratulations! You made it out of the maze alive. 
-        You have won and are the Champion!  
-        You have proved yourself as a budding wizard and have eternal fame and glory. 
-        You may have passed this test but you will have many more to face! 
-        Onward and upward!
-                  </p>
+          Congratulations! You made it out of the maze alive.
+          By completing this Hogwarts Quest, you are the Champion!
+          In these challenges, you have proved yourself as a budding wizard.
+          As a reward, you will have eternal fame and glory.
+          You may have passed this test but you will have many more to face! Onward and upward!
+        </p>
+        <p>Press the escape key to restart the game</p>
       </div>
       <Sound
         url={congrats}
@@ -61,7 +62,7 @@ export function Ending(props) {
         url={fireworks}
         playStatus={Sound.status.PLAYING}
         autoLoad={true}
-        loop={false}
+        loop={true}
         volume="30"
       />
       <Sound

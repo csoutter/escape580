@@ -53,7 +53,7 @@ export function Riddle(props) {
             playStatus={Sound.status.PLAYING}
             autoLoad={true}
             loop={true}
-            volume={50} />
+            volume={10} />
     </React.Fragment>;
 
     const finishTransition = () => {

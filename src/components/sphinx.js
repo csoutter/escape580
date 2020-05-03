@@ -54,7 +54,7 @@ export function Sphinx(props) {
       autoLoad={true}
       loop={false}
       playbackRate=".7"
-      volume={100} />
+      volume="100" />
     <Sound
       url={snake}
       playStatus={Sound.status.PLAYING}
@@ -67,7 +67,7 @@ export function Sphinx(props) {
       playStatus={Sound.status.PLAYING}
       autoLoad={true}
       loop={false}
-      volume="80"
+      volume="60"
     />
   </React.Fragment>;
 
