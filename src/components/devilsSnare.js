@@ -57,32 +57,24 @@ export function DevilsSnare(props) {
    }
 
    const repeatIntro = () => {
-      Sound.playStatus = Sound.status.STOPPED;
-      setSound(
-         <Sound
-            url={devils_snare}
-            playStatus={Sound.status.STOPPED}
-            autoLoad={true}
-            loop={false}
-         />
-      );
-
-      setSound(
-         <Sound
-            url={snare_music}
-            playStatus={Sound.status.STOPPED}
-            autoLoad={true}
-            loop={false}
-         />
-      );
-
       setSound(intro);
    }
+
+     const resumeBackgroundMusic = () => {
+         setSound(<Sound
+                           url={snare_music}
+                           playStatus={Sound.status.PLAYING}
+                           autoLoad={true}
+                           loop={true}
+                           volume={75}
+                        />);
+                        }
+
    const help = <React.Fragment>
       <Sound
          url={help_message}
          playStatus={Sound.status.PLAYING}
-         onFinishedPlaying={repeatIntro}
+         onFinishedPlaying={resumeBackgroundMusic}
          autoLoad={true}
          loop={false}
          volume={100}

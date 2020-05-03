@@ -56,28 +56,19 @@ export function Chamber(props) {
       setSound(intro);
    }
 
+   const resumeBackgroundMusic = () => {
+     setSound(<Sound
+                       url={chamberTheme}
+                       playStatus={Sound.status.PLAYING}
+                       autoLoad={true}
+                       loop={true}
+                       volume={75}
+                    />);}
+
    const repeatIntro = () => {
-      Sound.playStatus = Sound.status.STOPPED;
-      setSound(
-         <Sound
-            url={chamber_intro}
-            playStatus={Sound.status.STOPPED}
-            autoLoad={true}
-            loop={false}
-         />
-      );
+     setSound(intro);
+     }
 
-      setSound(
-         <Sound
-            url={chamberTheme}
-            playStatus={Sound.status.STOPPED}
-            autoLoad={true}
-            loop={false}
-         />
-      );
-
-      setSound(intro);
-   }
    const transit = <React.Fragment>
       <Sound
          url={transition}
@@ -93,7 +84,7 @@ export function Chamber(props) {
       <Sound
          url={help_message}
          playStatus={Sound.status.PLAYING}
-         onFinishedPlaying={repeatIntro}
+         onFinishedPlaying={resumeBackgroundMusic}
          autoLoad={true}
          loop={false}
          volume={100}
@@ -267,7 +258,8 @@ export function Chamber(props) {
                Welcome to Level Two
                           </h>
             <p id="p-landing">
-               You have entered the Chamber of Secrets. The monstrous basilisk lurks in the shadows
+                You have entered a magical portal that has transported you to the Chamber of Secrets.
+                The monstrous basilisk lurks in the shadows
                 of the chamber, and if you look the basilisk in the eye, you will be frozen and unable
                 to move! Your job is to defeat the basilisk. Fawkes the Phoenix has flown into the
                 chamber and has now blinded the basilisk so that you no longer have to worry about being

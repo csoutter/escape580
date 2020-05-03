@@ -209,11 +209,19 @@ export function Riddle(props) {
         setSound(intro);
     }
 
+    const resumeBackgroundMusic = () => {
+                setSound(<Sound
+                                      url={snake}
+                                      playStatus={Sound.status.PLAYING}
+                                      autoLoad={true}
+                                      loop={true}
+                                      volume={10} />);}
+
     const help = <React.Fragment>
       <Sound
          url={help_message}
          playStatus={Sound.status.PLAYING}
-         onFinishedPlaying={repeatIntro}
+         onFinishedPlaying={resumeBackgroundMusic}
          autoLoad={true}
          loop={false}
          volume={100}

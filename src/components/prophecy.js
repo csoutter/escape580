@@ -84,6 +84,25 @@ export function Prophecy(props) {
   const finishTransition = () => {
     setSound(intro);
   };
+
+  const resumeBackgroundMusic = () => {
+             setSound( <React.Fragment>
+             <Sound
+                   url={foreboding}
+                   playStatus={Sound.status.PLAYING}
+                   autoLoad={true}
+                   loop={true}
+                   volume="40"
+                 />
+                 <Sound
+                   url={thunder}
+                   playStatus={Sound.status.PLAYING}
+                   autoLoad={true}
+                   loop={false}
+                   volume="80"
+                 />
+             </React.Fragment>);}
+
   const repeatIntro = () => {
     Sound.playStatus = Sound.status.STOPPED;
     setSound(
@@ -120,7 +139,7 @@ export function Prophecy(props) {
     <Sound
       url={help_message}
       playStatus={Sound.status.PLAYING}
-      onFinishedPlaying={repeatIntro}
+      onFinishedPlaying={resumeBackgroundMusic}
       autoLoad={true}
       loop={false}
       volume={100}
