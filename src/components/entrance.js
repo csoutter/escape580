@@ -60,7 +60,7 @@ export function Entrance(props) {
       case " ":
         handleViewChange("level-one");
         break;
-      case "r":
+      case "ArrowRight":
         repeatIntro();
         break;
       case "Escape":

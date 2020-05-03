@@ -35,7 +35,7 @@ export function Instructions(props) {
          case " ":
             handleViewChange('enter');
             break;
-         case "r":
+         case "ArrowRight":
             repeatIntro();
             break;
          case "Escape":

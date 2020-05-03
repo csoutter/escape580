@@ -274,10 +274,10 @@ export function Riddle(props) {
             case " ":
                 handleSpace();
                 break;
-            case "r":
+            case "ArrowRight":
                 repeatIntro();
                 break;
-            case "h":
+            case "ArrowLeft":
                 handleHelp();
                 break;
             case "Escape":
