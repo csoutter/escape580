@@ -1,7 +1,7 @@
 # Escape The Maze: A Hogwarts Quest
 In this game, you are a student at Hogwarts School of Witchcraft and Wizardry. To prove your mastery of magic, you are competing in the Triwizard Tournament. You are about to start the Third Task, the final task in this Tournament. You will begin by entering a magical maze, with challenges and obstacles at every turn. These will test your magical knowledge and quick thinking. You will use your keyboard to navigate through these obstacles.
 
-Created for UNC's COMP 580 course.
+Created for UNC's COMP 580 course. (see below for final report.)
 
 Developed by Mary Halvorsen, Saumya Ray, and Cassidy Soutter
 
