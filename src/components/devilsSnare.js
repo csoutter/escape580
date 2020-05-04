@@ -57,6 +57,15 @@ export function DevilsSnare(props) {
    }
 
    const repeatIntro = () => {
+      Sound.playStatus = Sound.status.STOPPED;
+      setSound(
+      <Sound
+         url={snare_music}
+         playStatus={Sound.status.STOPPED}
+         autoLoad={true}
+         loop={true}
+         volume={75}
+      />);
       setSound(intro);
    }
 
