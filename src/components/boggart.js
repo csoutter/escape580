@@ -70,8 +70,15 @@ export function Boggart(props) {
                          />);}
 
   const repeatIntro = () => {
-    setSound(intro);
-  }
+    Sound.playStatus = Sound.status.STOPPED;
+      setSound(<Sound
+                     url={rattling}
+                     playStatus={Sound.status.STOPPED}
+                     autoLoad={true}
+                     loop={false}
+                     volume={75}
+                   />);
+      setSound(intro);}
 
   const transit = <React.Fragment>
     <Sound

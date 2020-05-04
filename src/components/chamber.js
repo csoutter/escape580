@@ -66,6 +66,15 @@ export function Chamber(props) {
                     />);}
 
    const repeatIntro = () => {
+        Sound.playStatus = Sound.status.STOPPED;
+        setSound(
+        <Sound
+                 url={chamberTheme}
+                 playStatus={Sound.status.STOPPED}
+                 autoLoad={true}
+                 loop={true}
+                 volume={75}
+              /> );
      setSound(intro);
      }
 
