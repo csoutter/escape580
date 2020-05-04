@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/escape580/static/css/main.373db3dc.chunk.css",
+    "main.css": "/escape580/static/css/main.409636b2.chunk.css",
     "main.js": "/escape580/static/js/main.a59dead5.chunk.js",
     "main.js.map": "/escape580/static/js/main.a59dead5.chunk.js.map",
     "runtime-main.js": "/escape580/static/js/runtime-main.6d07fea3.js",
@@ -8,9 +8,9 @@
     "static/js/2.057f539a.chunk.js": "/escape580/static/js/2.057f539a.chunk.js",
     "static/js/2.057f539a.chunk.js.map": "/escape580/static/js/2.057f539a.chunk.js.map",
     "index.html": "/escape580/index.html",
-    "precache-manifest.bbada532408cc14ea9565b113b836e65.js": "/escape580/precache-manifest.bbada532408cc14ea9565b113b836e65.js",
+    "precache-manifest.34132bdc2e9ce0548170a7c4fb5d1f82.js": "/escape580/precache-manifest.34132bdc2e9ce0548170a7c4fb5d1f82.js",
     "service-worker.js": "/escape580/service-worker.js",
-    "static/css/main.373db3dc.chunk.css.map": "/escape580/static/css/main.373db3dc.chunk.css.map",
+    "static/css/main.409636b2.chunk.css.map": "/escape580/static/css/main.409636b2.chunk.css.map",
     "static/js/2.057f539a.chunk.js.LICENSE.txt": "/escape580/static/js/2.057f539a.chunk.js.LICENSE.txt",
     "static/media/HarryP-MVZ6w.ttf": "/escape580/static/media/HarryP-MVZ6w.181ef9a7.ttf",
     "static/media/LUMOS.TTF": "/escape580/static/media/LUMOS.d5d39b03.TTF",
@@ -101,7 +101,7 @@
   "entrypoints": [
     "static/js/runtime-main.6d07fea3.js",
     "static/js/2.057f539a.chunk.js",
-    "static/css/main.373db3dc.chunk.css",
+    "static/css/main.409636b2.chunk.css",
     "static/js/main.a59dead5.chunk.js"
   ]
 }
