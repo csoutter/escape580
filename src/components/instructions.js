@@ -2,13 +2,14 @@ import React, { useLayoutEffect, useCallback, useState } from 'react';
 import Sound from 'react-sound';
 import instructions from "../audio/help.m4a";
 import updated_instructions from '../audio/updated_instructions_3.m4a';
+import full_instructions from '../audio/full_instructions.m4a';
 
 export function Instructions(props) {
 
    const handleViewChange = props.handleViewChange === undefined ? null : props.handleViewChange;
 
    const instruct = <Sound
-      url={updated_instructions}
+      url={full_instructions}
       playStatus={Sound.status.PLAYING}
       autoLoad={true}
       loop={true}
@@ -20,7 +21,7 @@ export function Instructions(props) {
      Sound.playStatus = Sound.status.STOPPED;
       setSound(
          <Sound
-            url={instructions}
+            url={full_instructions}
             playStatus={Sound.status.STOPPED}
             autoLoad={true}
             loop={false}
@@ -78,7 +79,7 @@ export function Instructions(props) {
                   If you do not hear any response after pressing the space bar, press tab again and then press the space bar.
                </p>
                <p>
-                  Press the left arrow key at any time to hear a condensed version of these instructions.
+                  Press the left arrow key at any time to hear a condensed version of these instructions. To restart the game at any time, press the escape key. 
                   If you are ready to begin, press the space bar.
                </p>
             </p>
